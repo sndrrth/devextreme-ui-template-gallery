@@ -30,15 +30,12 @@
       <dxi-item location="before">
         <div class="grid-header">Contacts</div>
       </dxi-item>
-      <dxi-item location="before" locateInMenu="auto">
-        <dx-drop-down-button
-          stylingMode="text"
-          [width]="160"
-          [useSelectMode]="true"
-          [items]="filterStatusList"
-          [selectedItemKey]="filterStatusList[0]"
-          (onSelectionChanged)="filterByStatus($event)"
-        ></dx-drop-down-button>
+      <dxi-item location="before" locateInMenu="auto" cssClass="filter-tabs">
+        <dx-tabs
+          [selectedIndex]="0"
+          [items]="filterTabs"
+          (onItemClick)="onStatusTabChange($event)"
+        ></dx-tabs>
       </dxi-item>
       <dxi-item location="after" locateInMenu="auto">
         <dx-button

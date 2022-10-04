@@ -8,6 +8,7 @@ import {
   DxDropDownButtonModule,
   DxSelectBoxModule,
   DxTextBoxModule,
+  DxTabsModule,
 } from 'devextreme-angular';
 import { RowClickEvent, RowPreparedEvent, ColumnCustomizeTextArg } from 'devextreme/ui/data_grid';
 import { exportDataGrid as exportDataGridToPdf } from 'devextreme/pdf_exporter';
@@ -17,7 +18,6 @@ import {
   ContactStatusModule,
 } from 'src/app/shared/components';
 import { Contact, contactStatusList, ContactStatus } from 'src/app/shared/types/contact';
-import { SelectionChangedEvent } from 'devextreme/ui/drop_down_button';
 import { CommonModule } from '@angular/common';
 import { RwaService } from 'src/app/shared/services';
 import { Subscription } from 'rxjs';
@@ -25,6 +25,7 @@ import { Workbook } from 'exceljs';
 import { saveAs } from 'file-saver-es';
 import { jsPDF } from 'jspdf';
 import { UserPanelModule } from './user-panel/user-panel.component';
+import { ItemClickEvent as TabsItemClickEvent } from 'devextreme/ui/tabs';
 
 type FilterContactStatus = ContactStatus | 'All';
 
@@ -38,7 +39,10 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
 
   statusList = contactStatusList;
 
-  filterStatusList = ['All', ...contactStatusList];
+  filterTabs = ['All', ...contactStatusList].map((item, idx, list) => ({
+    text: item,
+    badge: `${42 - (idx * 12)}`
+  }));
 
   isPanelOpen = false;
 
@@ -76,20 +80,20 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
     this.isPanelOpen = true;
   }
 
-  rowPrepared = (e: RowPreparedEvent) => {
-    const { rowElement } = e;
-
-    rowElement.classList.add('clickable-row');
-  };
-
-  filterByStatus = (e: SelectionChangedEvent) => {
-    const { item: status }: { item: FilterContactStatus } = e;
+  onStatusTabChange(item: TabsItemClickEvent) {
+    const status = item.itemData!.text;
 
     if (status === 'All') {
       this.dataGrid.instance.clearFilter();
     } else {
       this.dataGrid.instance.filter(['status', '=', status]);
     }
+  }
+
+  rowPrepared = (e: RowPreparedEvent) => {
+    const { rowElement } = e;
+
+    rowElement.classList.add('clickable-row');
   };
 
   formatPhone = (number: string | number): string => String(number).replace(/(\d{3})(\d{3})(\d{4})/, '+1($1)$2-$3');
@@ -138,6 +142,7 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
     DxDropDownButtonModule,
     DxSelectBoxModule,
     DxTextBoxModule,
+    DxTabsModule,
 
     UserPanelModule,
 

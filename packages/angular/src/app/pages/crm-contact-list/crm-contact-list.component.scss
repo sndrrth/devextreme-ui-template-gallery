@@ -46,6 +46,24 @@ $side-panel-toolbar-height: 76px;
   user-panel {
     display: inherit;
   }
+
+  ::ng-deep .filter-tabs {
+    .dx-tab {
+      padding: 4px 16px;
+      background-color: $background-color;
+    }
+
+    .dx-tab-content, .dx-tab-text {
+      text-transform: none;
+    }
+
+    .dx-badge {
+      margin-left: 8px;
+      background-color: #bae3f6;
+      color: black;
+      transform: translateY(3px);
+    }
+  }  
 }
 
 .edit-cell {
