@@ -14,8 +14,12 @@
     min-height: 100%;
     display: flex;
     flex: 1;
+    padding: 16px;
 
     ::ng-deep .dx-treeview {
+      .dx-treeview-item {
+        border-radius: 4px;
+      }
 
       // ## Long text positioning
       white-space: nowrap;
@@ -68,11 +72,6 @@
 
       // ## Item levels customization
       .dx-treeview-node {
-        &[aria-level="1"] {
-          font-weight: bold;
-          border-bottom: 1px solid $base-border-color;
-        }
-
         &[aria-level="2"] .dx-treeview-item-content {
           font-weight: normal;
           padding: 0 $side-panel-min-width;
@@ -87,7 +86,7 @@
       .dx-treeview-node-container {
         .dx-treeview-node {
           &.dx-state-selected:not(.dx-state-focused) > .dx-treeview-item {
-            background: transparent;
+            background-color: rgba(0, 0, 0, 0.06);
           }
 
           &.dx-state-selected > .dx-treeview-item * {
