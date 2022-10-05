@@ -41,7 +41,7 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
 
   filterTabs = ['All', ...contactStatusList].map((item, idx, list) => ({
     text: item,
-    badge: `${42 - (idx * 12)}`
+    badge: 0
   }));
 
   isPanelOpen = false;
@@ -58,6 +58,9 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.dataSubscription = this.service.getContacts().subscribe((data) => {
       this.dataSource = data;
+      this.filterTabs.forEach(tab => {
+        tab.badge = tab.text === 'All' ? data.length : data.filter(item => item.status === tab.text).length
+      });
     });
   }
 
