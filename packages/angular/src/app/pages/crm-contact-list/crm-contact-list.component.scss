@@ -16,8 +16,13 @@ $side-panel-toolbar-height: 76px;
   bottom: 0;
   left: 0;
   right: 0;
+  flex-direction: column;
 
   .grid {
+    .clickable-row {
+      cursor: pointer;
+    }
+
     .name-template {
       margin: -6px 0;
 
@@ -26,20 +31,16 @@ $side-panel-toolbar-height: 76px;
         color: #757575de;
       }
     }
+  }
 
-    ::ng-deep & {
-      .dx-datagrid-header-panel {
-        padding-top: 20px;
-        padding-bottom: 10px;
-      }
+  .grid-header {
+    @include header();
+  }
 
-      .clickable-row {
-        cursor: pointer;
-      }
-    }
-
-    .grid-header {
-      @include header();
+  ::ng-deep {
+    .dx-toolbar {
+      padding: 20px 10px 11px;
+      border-bottom: 1px solid $base-border-color;
     }
   }
 
@@ -69,6 +70,10 @@ $side-panel-toolbar-height: 76px;
       transform: translateY(1px);
     }
   }  
+
+  ::ng-deep .search-panel .dx-toolbar-item-content {
+    margin-left: 15px;
+  }
 }
 
 .edit-cell {

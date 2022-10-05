@@ -1,11 +1,92 @@
 <div class="view-wrapper">
+
+  <dx-toolbar>
+    <dxi-item location="before">
+      <div class="grid-header">Contacts</div>
+    </dxi-item>
+    <dxi-item location="before" locateInMenu="auto" cssClass="filter-tabs">
+      <dx-tabs
+        [selectedIndex]="0"
+        [items]="filterTabs"
+        (onItemClick)="onStatusTabChange($event)"
+      ></dx-tabs>
+    </dxi-item>
+    <dxi-item location="after" locateInMenu="auto">
+      <dx-button
+        text="Add Contact"
+        icon="plus"
+        type="default"
+        stylingMode="contained"
+        (onClick)="addRow()"
+      ></dx-button>
+    </dxi-item>
+    <dxi-item
+      location="after"
+      locateInMenu="auto"
+      showText="inMenu"
+      widget="dxButton"
+      [options]="{ text: 'Refresh', icon: 'refresh', onClick: refresh }"
+    ></dxi-item>
+    <dxi-item location="after" locateInMenu="auto">
+      <div class="separator"></div>
+    </dxi-item>
+    <dxi-item
+      location="after"
+      locateInMenu="auto"
+      widget="dxDropDownButton"
+      showText="inMenu"
+      [options]="{
+        icon: 'export',
+        dropDownOptions: {
+          width: 200
+        },
+        items: [
+          {
+            text: 'Export all data to PDF',
+            icon: 'exportpdf',
+            onClick: onExportAsPdf
+          },
+          {
+            text: 'Export all data to Excel',
+            icon: 'exportxlsx',
+            onClick: onExportAsExcel
+          }
+        ]
+      }"
+    ></dxi-item>
+    <dxi-item location="after" locateInMenu="auto">
+      <div class="separator"></div>
+    </dxi-item>
+    <dxi-item
+      location="after"
+      locateInMenu="auto"
+      widget="dxButton"
+      showText="inMenu"
+      [options]="{
+        text: 'Column Chooser',
+        icon: 'columnchooser',
+        onClick: chooseColumnDataGrid
+      }"
+    ></dxi-item>
+    <dxi-item
+      location="after"
+      locateInMenu="auto"
+      widget="dxTextBox"
+      cssClass="search-panel"
+      [options]="{
+        placeholder: 'Search contacts',
+        mode: 'search',
+        onInput: searchDataGrid
+      }"
+    ></dxi-item>
+  </dx-toolbar>
+
   <dx-data-grid
     class="grid"
     noDataText=""
     [dataSource]="dataSource"
     (onRowClick)="rowClick($event)"
     (onRowPrepared)="rowPrepared($event)"
-    (exporting)="onExporting($event)"
   >
     <dxo-scrolling mode="virtual"></dxo-scrolling>
     <dxo-selection
@@ -15,55 +96,6 @@
     ></dxo-selection>
     <dxo-sorting mode="multiple"></dxo-sorting>
     <dxo-header-filter [visible]="true"></dxo-header-filter>
-    <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
-    <dxo-search-panel
-      [visible]="true"
-      placeholder="Contact Search"
-    ></dxo-search-panel>
-    <dxo-export 
-      [enabled]="true" 
-      [allowExportSelectedData]="true" 
-      [formats]="['xlsx', 'pdf']">
-    </dxo-export>
-
-    <dxo-toolbar>
-      <dxi-item location="before">
-        <div class="grid-header">Contacts</div>
-      </dxi-item>
-      <dxi-item location="before" locateInMenu="auto" cssClass="filter-tabs">
-        <dx-tabs
-          [selectedIndex]="0"
-          [items]="filterTabs"
-          (onItemClick)="onStatusTabChange($event)"
-        ></dx-tabs>
-      </dxi-item>
-      <dxi-item location="after" locateInMenu="auto">
-        <dx-button
-          text="Add Contact"
-          icon="plus"
-          type="default"
-          stylingMode="contained"
-          (onClick)="addRow()"
-        ></dx-button>
-      </dxi-item>
-      <dxi-item
-        location="after"
-        locateInMenu="auto"
-        showText="inMenu"
-        widget="dxButton"
-        [options]="{ text: 'Refresh', icon: 'refresh', onClick: refresh }"
-      ></dxi-item>
-      <dxi-item location="after" locateInMenu="auto">
-        <div class="separator"></div>
-      </dxi-item>
-      <dxi-item name="exportButton"></dxi-item>
-      <dxi-item location="after" locateInMenu="auto">
-        <div class="separator"></div>
-      </dxi-item>
-      <dxi-item name="columnChooserButton" locateInMenu="auto"></dxi-item>
-      <dxi-item name="searchPanel" locateInMenu="auto"></dxi-item>
-    </dxo-toolbar>
-
     <dxi-column
       dataField="name"
       caption="Name"

@@ -9,6 +9,7 @@ import {
   DxSelectBoxModule,
   DxTextBoxModule,
   DxTabsModule,
+  DxToolbarModule,
 } from 'devextreme-angular';
 import { RowClickEvent, RowPreparedEvent, ColumnCustomizeTextArg } from 'devextreme/ui/data_grid';
 import { exportDataGrid as exportDataGridToPdf } from 'devextreme/pdf_exporter';
@@ -26,6 +27,7 @@ import { saveAs } from 'file-saver-es';
 import { jsPDF } from 'jspdf';
 import { UserPanelModule } from './user-panel/user-panel.component';
 import { ItemClickEvent as TabsItemClickEvent } from 'devextreme/ui/tabs';
+import { InputEvent as TextBoxInputEvent } from 'devextreme/ui/text_box';
 
 type FilterContactStatus = ContactStatus | 'All';
 
@@ -54,6 +56,9 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
 
   constructor(private service: RwaService) {
   }
+
+  chooseColumnDataGrid = () => this.dataGrid.instance.showColumnChooser();
+  searchDataGrid = (e: TextBoxInputEvent) => this.dataGrid.instance.searchByText(e.component.option('text'));
 
   ngOnInit(): void {
     this.dataSubscription = this.service.getContacts().subscribe((data) => {
@@ -111,30 +116,29 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
     return this.formatPhone(value.toString());
   };
 
-  onExporting(e) {
-    if (e.format === 'pdf') {
-      const doc = new jsPDF();
-      exportDataGridToPdf({
-        jsPDFDocument: doc,
-        component: e.component,
-      }).then(() => {
-        doc.save('Tasks.pdf');
-      });
-    } else {
-      const workbook = new Workbook();
-      const worksheet = workbook.addWorksheet('Tasks');
+  onExportAsPdf = () => {
+    const doc = new jsPDF();
+    exportDataGridToPdf({
+      jsPDFDocument: doc,
+      component: this.dataGrid.instance,
+    }).then(() => {
+      doc.save('Contacts.pdf');
+    });
+  }
 
-      exportDataGridToXLSX({
-        component: e.component,
-        worksheet,
-        autoFilterEnabled: true,
-      }).then(() => {
-        workbook.xlsx.writeBuffer().then((buffer) => {
-          saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'Tasks.xlsx');
-        });
+  onExportAsExcel = () => {
+    const workbook = new Workbook();
+    const worksheet = workbook.addWorksheet('Contacts');
+
+    exportDataGridToXLSX({
+      component: this.dataGrid.instance,
+      worksheet,
+      autoFilterEnabled: true,
+    }).then(() => {
+      workbook.xlsx.writeBuffer().then((buffer) => {
+        saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'Contacts.xlsx');
       });
-      e.cancel = true;
-    }
+    });
   }
 }
 
@@ -146,6 +150,7 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
     DxSelectBoxModule,
     DxTextBoxModule,
     DxTabsModule,
+    DxToolbarModule,
 
     UserPanelModule,
 
