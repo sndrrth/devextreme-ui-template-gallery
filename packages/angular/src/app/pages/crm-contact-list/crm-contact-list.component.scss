@@ -18,6 +18,7 @@ $side-panel-toolbar-height: 76px;
   left: 0;
   right: 0;
   display: grid;
+  grid-template-areas: "main panel" "main panel" "main panel";
   grid-template-rows: auto auto minmax(0, 1fr);
 
   .data-grid {
@@ -26,18 +27,16 @@ $side-panel-toolbar-height: 76px;
     overflow: hidden;
   }
 
-  .grid {
-    .clickable-row {
-      cursor: pointer;
-    }
+  ::ng-deep .clickable-row {
+    cursor: pointer;
+  }
 
-    .name-template {
-      margin: -6px 0;
+  .name-template {
+    margin: -6px 0;
 
-      .position {
-        font-size: 12px;
-        color: #757575de;
-      }
+    .position {
+      font-size: 12px;
+      color: #757575de;
     }
   }
 
@@ -46,10 +45,16 @@ $side-panel-toolbar-height: 76px;
   }
 
   ::ng-deep {
-    .dx-toolbar {
+    > .dx-toolbar {
       padding: 20px 10px 11px;
       border-bottom: 1px solid $base-border-color;
     }
+  }
+
+  .details-panel {
+    position: relative;
+    display: flex;
+    grid-area: panel;
   }
 
   user-panel {

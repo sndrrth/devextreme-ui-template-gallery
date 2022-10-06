@@ -119,4 +119,10 @@ $side-panel-toolbar-height: 58px;
       }
     }
   }
+
+  ::ng-deep {
+    .dx-overlay-shader {
+      background: transparent;
+    }
+  }
 }
