@@ -1,5 +1,14 @@
 @use "variables.scss" as *;
 
+.dx-theme-material-typography {
+  font-size: 13px;
+  font-family: $base-font-family;
+}
+
+.dx-widget {
+  font-family: $base-font-family;
+}
+
 .view-wrapper {
   display: flex;
   overflow: hidden;
