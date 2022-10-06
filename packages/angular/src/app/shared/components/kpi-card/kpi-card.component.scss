@@ -1,0 +1,67 @@
+@use "../../../../variables.scss" as *;
+
+.kpi-card {
+    border-radius: 4px;
+    border: 1px solid $base-border-color;
+    padding: 16px;
+  
+    &[data-type="positive"] {
+      --color: #{$base-accent};
+    }
+    
+    &[data-type="negative"] {
+      --color: #{$base-warning};
+    }
+  
+    dt {
+      color: lighten($base-label-color, 12);
+    }
+  
+    dd {
+      margin: 0;
+      padding: 0;
+    }
+  
+    .dx-icon {
+      margin-right: 3px;
+      font-size: 12px;
+      transform: rotate(var(--rotate, 0));
+    }
+  }
+  
+  .kpi-card-values {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .kpi-card-value {
+    font-size: 24px;
+    font-weight: 800;
+  }
+  
+  .kpi-card-badge {
+  padding: 2px 4px;
+  border-radius: 3px; 
+  background-color: var(--color);
+  color: white;
+  
+    .kpi-card[data-type="positive"] & {
+      --rotate: 45deg;
+    }
+  
+    .kpi-card[data-type="negative"] & {
+      --rotate: 135deg;
+    }
+  }
+  
+  .kpi-card-details {
+    margin-top: 18px;
+    color: lighten($base-label-color, 40);
+    font-size: 12px;
+  
+    strong {
+      color: var(--color);
+      font-weight: 400;
+    }
+  }

@@ -28,6 +28,8 @@ import { jsPDF } from 'jspdf';
 import { UserPanelModule } from './user-panel/user-panel.component';
 import { ItemClickEvent as TabsItemClickEvent } from 'devextreme/ui/tabs';
 import { InputEvent as TextBoxInputEvent } from 'devextreme/ui/text_box';
+import { KpiCardModule } from 'src/app/shared/components/kpi-card/kpi-card.component';
+import { KpiCardListModule } from 'src/app/shared/components/kpi-card-list/kpi-card-list.component';
 
 type FilterContactStatus = ContactStatus | 'All';
 
@@ -151,12 +153,13 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
     DxTextBoxModule,
     DxTabsModule,
     DxToolbarModule,
-
+    
     UserPanelModule,
 
     CardActivitiesModule,
     ContactStatusModule,
-
+    KpiCardListModule,
+    KpiCardModule,
     CommonModule,
   ],
   providers: [],

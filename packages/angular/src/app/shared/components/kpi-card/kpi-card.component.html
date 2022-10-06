@@ -1,0 +1,15 @@
+<div class="kpi-card" [attr.data-type]="type">
+    <dt>{{ label }}</dt>  
+    <dd>
+        <div class="kpi-card-values">
+        <span class="kpi-card-value">{{ absoluteValue | number }}</span>
+        <span class="kpi-card-badge">
+            <span class="dx-icon dx-icon-arrowup"></span>
+            <span>{{ absRelativeValue | percent: '0.2' }}</span>
+        </span>
+        </div>
+        <div class="kpi-card-details">
+            You made an extra <strong>{{ extraThisYear | number }}</strong> this year
+        </div>
+    </dd>
+</div>
