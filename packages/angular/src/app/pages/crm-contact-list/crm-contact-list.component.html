@@ -2,7 +2,7 @@
 
   <dx-toolbar>
     <dxi-item location="before">
-      <div class="grid-header">Contacts</div>
+      <div class="grid-header">Contracts</div>
     </dxi-item>
     <dxi-item location="before" locateInMenu="auto" cssClass="filter-tabs">
       <dx-tabs
@@ -129,51 +129,56 @@
       <dxo-sorting mode="multiple"></dxo-sorting>
       <dxo-header-filter [visible]="true"></dxo-header-filter>
       <dxi-column
-        dataField="name"
-        caption="Name"
+        dataField="id"
+        caption="Nr."
         sortOrder="asc"
-        [hidingPriority]="5"
-        [minWidth]="150"
-        cellTemplate="name"
+        [width]="100"
       ></dxi-column>
       <dxi-column
-        dataField="company"
-        caption="Company"
-        [hidingPriority]="5"
-        [minWidth]="150"
+        dataField="title"
+        caption="Titel"
+        sortOrder="asc"
       ></dxi-column>
       <dxi-column
         dataField="status"
         caption="Status"
         cellTemplate="cellStatus"
         editCellTemplate="editCellStatus"
-        [hidingPriority]="3"
         [minWidth]="100"
       ></dxi-column>
       <dxi-column
-        dataField="assignedTo"
-        caption="Assigned to"
-        [hidingPriority]="4"
+        dataField="type"
+        caption="Art"
+        [minWidth]="150"
       ></dxi-column>
       <dxi-column
-        dataField="phone"
-        caption="Phone"
-        [customizeText]="customizePhoneCell"
-        [hidingPriority]="2"
+        dataField="partner"
+        caption="Vertragspartner"
+        [minWidth]="150"
       ></dxi-column>
       <dxi-column
-        dataField="email"
-        caption="Email"
-        [hidingPriority]="1"
+        dataField="responsibility"
+        caption="Verantwortung"
+        [minWidth]="150"
       ></dxi-column>
-
-      <div *dxTemplate="let cellInfo of 'name'" class="name-template">
-        <div>{{ cellInfo.data.name }}</div>
-        <div class="position">{{ cellInfo.data.position }}</div>
-      </div>
+      <dxi-column
+        dataField="startDate"
+        caption="Vertragsbeginn"
+        [minWidth]="150"
+      ></dxi-column>
+      <dxi-column
+        dataField="endDate"
+        caption="Vertragsende"
+        [minWidth]="150"
+      ></dxi-column>
+      <dxi-column
+        dataField="lastModification"
+        caption="Letzte Änderung"
+        [minWidth]="150"
+      ></dxi-column>
 
       <div *dxTemplate="let cellInfo of 'cellStatus'">
-        <contact-status [value]="cellInfo.data.status"></contact-status>
+        <contract-status [value]="cellInfo.data.status"></contract-status>
       </div>
 
       <div *dxTemplate="let cellInfo of 'editCellStatus'">

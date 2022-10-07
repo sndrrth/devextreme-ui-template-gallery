@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, from } from 'rxjs';
+import { Observable, from, of } from 'rxjs';
 import {
   map, groupBy, mergeMap, toArray,
 } from 'rxjs/operators';
 import { Task } from 'src/app/shared/types/task';
 import { Contact } from 'src/app/shared/types/contact';
 import { SalesOrOpportunitiesByCategory } from '../types/analytics';
+import { contracts } from './contracts';
 
 const API_URL = 'https://js.devexpress.com/Demos/RwaService/api';
 // const API_URL = 'https://localhost:5001/api';
@@ -15,6 +16,10 @@ const API_URL = 'https://js.devexpress.com/Demos/RwaService/api';
 export class RwaService {
   constructor(private http: HttpClient) {
   }
+
+  public getContracts = () => of(contracts);
+
+  public getContract = (id: string) => of(contracts.find(c => c.id === id));
 
   public getContacts = () =>
     this.http.get<Contact[]>(`${API_URL}/Users/Contacts`);

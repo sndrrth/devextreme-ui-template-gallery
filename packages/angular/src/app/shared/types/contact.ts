@@ -15,6 +15,7 @@ type State = {
 };
 
 export type Contact = {
+    id: number;
     name: string,
     address: string,
     firstName: string,

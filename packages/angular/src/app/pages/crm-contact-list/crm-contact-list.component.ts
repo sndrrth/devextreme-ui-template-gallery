@@ -30,6 +30,8 @@ import { ItemClickEvent as TabsItemClickEvent } from 'devextreme/ui/tabs';
 import { InputEvent as TextBoxInputEvent } from 'devextreme/ui/text_box';
 import { KpiCardModule } from 'src/app/shared/components/kpi-card/kpi-card.component';
 import { KpiCardListModule } from 'src/app/shared/components/kpi-card-list/kpi-card-list.component';
+import { Contract, contractStatusList } from 'src/app/shared/types/contract';
+import { ContractStatusModule } from 'src/app/shared/components/contract-status/contract-status.component';
 
 type FilterContactStatus = ContactStatus | 'All';
 
@@ -43,7 +45,7 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
 
   statusList = contactStatusList;
 
-  filterTabs = ['All', ...contactStatusList].map((item, idx, list) => ({
+  filterTabs = ['All', ...contractStatusList].map((item, idx, list) => ({
     text: item,
     badge: 0
   }));
@@ -52,7 +54,7 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
 
   userId: number;
 
-  dataSource: Contact[];
+  dataSource: Contract[];
 
   dataSubscription: Subscription = new Subscription();
 
@@ -63,7 +65,7 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
   searchDataGrid = (e: TextBoxInputEvent) => this.dataGrid.instance.searchByText(e.component.option('text'));
 
   ngOnInit(): void {
-    this.dataSubscription = this.service.getContacts().subscribe((data) => {
+    this.dataSubscription = this.service.getContracts().subscribe((data) => {
       this.dataSource = data;
       this.filterTabs.forEach(tab => {
         tab.badge = tab.text === 'All' ? data.length : data.filter(item => item.status === tab.text).length
@@ -86,8 +88,11 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
   rowClick(e: RowClickEvent) {
     const { data } = e;
 
-    this.userId = data.id;
-    this.isPanelOpen = true;
+    this.service.getContacts().subscribe(contacts => {
+      const randomContact = contacts[Math.floor(Math.random()*contacts.length)];
+      this.userId = randomContact.id;
+      this.isPanelOpen = true;
+    })
   }
 
   onStatusTabChange(item: TabsItemClickEvent) {
@@ -158,6 +163,7 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
 
     CardActivitiesModule,
     ContactStatusModule,
+    ContractStatusModule,
     KpiCardListModule,
     KpiCardModule,
     CommonModule,
