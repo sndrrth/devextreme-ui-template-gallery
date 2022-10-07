@@ -1,22 +1,26 @@
 export const navigation = [
   {
-    text: 'Startseite',
-    path: '',
-    icon: 'home',
+    label: '',
+    items: [
+      {
+        text: 'Startseite',
+        path: '',
+        icon: 'home',
+      },
+      {
+        text: 'Zuletzt verwendet',
+        path: '',
+        icon: 'clock'
+      },
+      {
+        text: 'Favoriten',
+        path: '',
+        icon: 'favorites',
+      },
+    ]
   },
   {
-    text: 'Zuletzt verwendet',
-    path: '',
-    icon: 'clock'
-  },
-  {
-    text: 'Favoriten',
-    path: '',
-    icon: 'favorites',
-  },
-  {
-    text: 'Meine Arbeit',
-    path: '',
+    label: 'Meine Arbeit',
     items: [
       {
         text: 'Dashboard',
@@ -41,8 +45,7 @@ export const navigation = [
     ],
   },
   {
-    text: 'Verträge',
-    path: '',
+    label: 'Verträge',
     items: [
       {
         text: 'Alle Verträge',
@@ -102,8 +105,7 @@ export const navigation = [
     ],
   },
   {
-    text: 'Partner',
-    path: '',
+    label: 'Partner',
     items: [
       {
         text: 'Firmen',

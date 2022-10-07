@@ -1,6 +1,24 @@
 /* stylelint-disable no-duplicate-selectors */
 @use "../../../../variables.scss" as *;
 
+.menu-group {
+  padding: 16px;
+}
+
+.menu-group-label {
+  margin-left: 16px;
+  margin-bottom: 8px;
+  color: lighten($base-text-color, 60);
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  .menu-container[data-compact="true"] & {
+    // TODO: Add "..."
+    visibility: hidden;
+  }
+}
+
 :host {
   display: flex;
   flex-direction: column;
@@ -11,9 +29,8 @@
   .menu-container {
     background-color: $side-panel-background;
     min-height: 100%;
-    display: flex;
+    // display: flex;
     flex: 1;
-    padding: 16px;
 
     ::ng-deep .dx-treeview {
       .dx-treeview-item {
@@ -45,7 +62,7 @@
         padding-right: 0;
 
         .dx-icon {
-          width: $side-panel-min-width !important;
+          width: 45px !important;
           margin: 0 !important;
         }
       }
@@ -75,15 +92,7 @@
           padding-bottom: 32px !important;
         }
 
-        &[aria-level="1"] .dx-treeview-item-content {
-          font-weight: 800;
-          text-transform: uppercase;
-        }
-
-        &[aria-level="2"] .dx-treeview-item-content {
-          font-weight: normal;
-          text-transform: none;
-        }
+        
       }
 
       // ##
