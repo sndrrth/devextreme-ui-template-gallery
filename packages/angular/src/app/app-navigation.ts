@@ -1,37 +1,123 @@
 export const navigation = [
   {
-    text: 'CRM',
+    text: 'Startseite',
+    path: '',
+    icon: 'home',
+  },
+  {
+    text: 'Zuletzt verwendet',
+    path: '',
+    icon: 'clock'
+  },
+  {
+    text: 'Favoriten',
+    path: '',
+    icon: 'favorites',
+  },
+  {
+    text: 'Meine Arbeit',
     path: '',
     items: [
       {
-        text: 'Contact List',
-        path: '/crm-contact-list',
-        icon: 'user',
+        text: 'Dashboard',
+        path: '/analytics-dashboard',
+        icon: 'chart',
       },
       {
-        text: 'Contact Details',
+        text: 'Verträge',
+        path: '/crm-contact-list',
+        icon: 'textdocument',
+      },
+      {
+        text: 'Vertragsdetails',
         path: '/crm-contact-details',
         icon: 'edit',
       },
-    ],
-  },
-  {
-    text: 'Planning',
-    path: '',
-    items: [
       {
-        text: 'Task List',
-        path: '/planning-task-list',
-        icon: 'event',
-      },
-      {
-        text: 'Task Details',
-        path: '/planning-task-details',
+        text: 'Fristen',
+        path: '',
         icon: 'edit',
       },
     ],
   },
   {
+    text: 'Verträge',
+    path: '',
+    items: [
+      {
+        text: 'Alle Verträge',
+        path: '/planning-task-list',
+        icon: 'textdocument',
+      },
+      {
+        text: 'Abonnementsvertrag',
+        path: '/planning-task-details',
+        icon: 'edit',
+      },
+      {
+        text: 'Dienstleistungsvertrag',
+        path: '',
+        icon: 'textdocument',
+      },
+      {
+        text: 'Finanzvertrag',
+        path: '',
+        icon: 'textdocument',
+      },
+      {
+        text: 'Geheimhaltungsvereinbarung',
+        path: '',
+        icon: 'textdocument',
+      },
+      {
+        text: 'IT Vertrag',
+        path: '',
+        icon: 'textdocument',
+      },
+      {
+        text: 'Kaufvertrag',
+        path: '',
+        icon: 'textdocument',
+      },
+      {
+        text: 'Leasingvertrag',
+        path: '',
+        icon: 'textdocument',
+      },
+      {
+        text: 'Mietvertrag',
+        path: '',
+        icon: 'textdocument',
+      },
+      {
+        text: 'Wartungsvertrag',
+        path: '',
+        icon: 'textdocument',
+      },
+      {
+        text: 'Werkvertrag',
+        path: '',
+        icon: 'textdocument',
+      },
+    ],
+  },
+  {
+    text: 'Partner',
+    path: '',
+    items: [
+      {
+        text: 'Firmen',
+        path: '',
+        icon: 'folder',
+      },
+      {
+        text: 'Kontakte',
+        path: '',
+        icon: 'group',
+      },
+    ],
+  },
+  /*{
     text: 'Analytics',
     path: '',
     items: [
@@ -51,5 +137,5 @@ export const navigation = [
         icon: 'globe',
       },
     ],
-  },
+  },*/
 ];
