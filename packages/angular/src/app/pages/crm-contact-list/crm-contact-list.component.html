@@ -118,6 +118,7 @@
       noDataText=""
       [dataSource]="dataSource"
       [allowColumnResizing]="true"
+      [columnAutoWidth]="true"
       (onRowClick)="rowClick($event)"
       (onRowPrepared)="rowPrepared($event)"
     >
@@ -133,7 +134,6 @@
         dataField="id"
         caption="Nr."
         sortOrder="asc"
-        [width]="100"
       ></dxi-column>
       <dxi-column
         dataField="title"
@@ -145,37 +145,30 @@
         caption="Status"
         cellTemplate="cellStatus"
         editCellTemplate="editCellStatus"
-        [minWidth]="100"
       ></dxi-column>
       <dxi-column
         dataField="type"
         caption="Art"
-        [minWidth]="150"
       ></dxi-column>
       <dxi-column
         dataField="partner"
         caption="Vertragspartner"
-        [minWidth]="150"
       ></dxi-column>
       <dxi-column
         dataField="responsibility"
         caption="Verantwortung"
-        [minWidth]="150"
       ></dxi-column>
       <dxi-column
         dataField="startDate"
         caption="Vertragsbeginn"
-        [minWidth]="150"
       ></dxi-column>
       <dxi-column
         dataField="endDate"
         caption="Vertragsende"
-        [minWidth]="150"
       ></dxi-column>
       <dxi-column
         dataField="lastModification"
         caption="Letzte Änderung"
-        [minWidth]="150"
       ></dxi-column>
 
       <div *dxTemplate="let cellInfo of 'cellStatus'">
