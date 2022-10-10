@@ -6,6 +6,7 @@ import { DxTreeViewModule, DxTreeViewComponent } from 'devextreme-angular/ui/tre
 import * as events from 'devextreme/events';
 import { navigation } from '../../../app-navigation';
 import { CommonModule } from '@angular/common';
+import { DxScrollViewModule } from 'devextreme-angular';
 
 @Component({
   selector: 'app-side-navigation-menu',
@@ -65,7 +66,7 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
 }
 
 @NgModule({
-  imports: [DxTreeViewModule, CommonModule],
+  imports: [DxTreeViewModule, DxScrollViewModule, CommonModule],
   declarations: [SideNavigationMenuComponent],
   exports: [SideNavigationMenuComponent],
 })

@@ -1,17 +1,17 @@
-<ng-content></ng-content>
-
-<div class="menu-container" [attr.data-compact]="_compactMode">
-  <div *ngFor="let group of navigation" class="menu-group">
-    <div *ngIf="group.label" class="menu-group-label">{{ group.label }}</div>
-    <dx-tree-view
-      [items]="group.items"
-      keyExpr="path"
-      selectionMode="single"
-      [focusStateEnabled]="false"
-      expandEvent="click"
-      (onItemClick)="onItemClick($event)"
-      width="100%"
-    >
-    </dx-tree-view>
+<dx-scroll-view>
+  <div class="menu-container" [attr.data-compact]="_compactMode">
+    <div *ngFor="let group of navigation" class="menu-group">
+      <div *ngIf="group.label" class="menu-group-label">{{ group.label }}</div>
+      <dx-tree-view
+        [items]="group.items"
+        keyExpr="path"
+        selectionMode="single"
+        [focusStateEnabled]="false"
+        expandEvent="click"
+        (onItemClick)="onItemClick($event)"
+        width="100%"
+      >
+      </dx-tree-view>
+    </div>
   </div>
-</div>
+</dx-scroll-view>
