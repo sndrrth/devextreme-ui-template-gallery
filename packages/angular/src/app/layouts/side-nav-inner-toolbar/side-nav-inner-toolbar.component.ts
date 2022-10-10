@@ -83,7 +83,7 @@ export class SideNavInnerToolbarComponent implements OnInit, OnDestroy {
 
     this.menuMode = isLarge ? 'shrink' : 'overlap';
     this.menuRevealMode = isXSmall ? 'slide' : 'expand';
-    this.minMenuSize = isXSmall ? 0 : 60;
+    this.minMenuSize = isXSmall ? 0 : 66;
     this.shaderEnabled = !isLarge;
   }
 

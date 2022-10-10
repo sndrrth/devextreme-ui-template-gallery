@@ -1,7 +1,10 @@
 <dx-scroll-view>
   <div class="menu-container" [attr.data-compact]="_compactMode">
     <div *ngFor="let group of navigation" class="menu-group">
-      <div *ngIf="group.label" class="menu-group-label">{{ group.label }}</div>
+      <div *ngIf="group.label" class="menu-group-label">
+        <span class="text">{{ group.label }}</span>
+        <span class="icon dx-icon dx-icon-more"></span>
+      </div>
       <dx-tree-view
         [items]="group.items"
         keyExpr="path"
