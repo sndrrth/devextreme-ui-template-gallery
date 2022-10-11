@@ -1,0 +1,18 @@
+<div class="view-wrapper">
+  <dx-toolbar>
+    <dxi-item location="before">
+      <div class="grid-header">Dienstleistungsvertrag</div>
+    </dxi-item>
+    <dxi-item
+      location="after"
+      locateInMenu="auto"
+      showText="inMenu"
+      widget="dxButton"
+      [options]="{ text: 'Info', icon: 'info', onClick: showInfo }"
+    ></dxi-item>
+  </dx-toolbar>
+
+  <dx-report-viewer [reportUrl]="reportUrl" height="100%">
+    <dxrv-request-options [invokeAction]="invokeAction" [host]="hostUrl"></dxrv-request-options>
+  </dx-report-viewer>
+</div>

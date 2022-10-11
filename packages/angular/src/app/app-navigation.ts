@@ -59,7 +59,7 @@ export const navigation = [
       },
       {
         text: 'Dienstleistungsvertrag',
-        path: '',
+        path: '/reporting-viewer',
         icon: 'textdocument',
       },
       {

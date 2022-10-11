@@ -17,6 +17,7 @@ import { AnalyticsDashboardComponent } from './pages/analytics-dashboard/analyti
 import { AnalyticsSalesReportComponent } from './pages/analytics-sales-report/analytics-sales-report.component';
 import { AnalyticsGeographyComponent } from './pages/analytics-geography/analytics-geography.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ReportingViewerComponent } from './pages/reporting-viewer/reporting-viewer.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,11 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'reporting-viewer',
+    component: ReportingViewerComponent,
     canActivate: [AuthGuardService],
   },
   {
