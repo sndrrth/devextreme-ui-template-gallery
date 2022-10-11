@@ -12,7 +12,7 @@ import { DxReportViewerModule } from 'devexpress-reporting-angular';
 export class ReportingViewerComponent implements AfterViewInit {
     title = 'DXReportViewerSample';
     hostUrl: string = 'https://demos.devexpress.com/Embedded/NetCore/Reporting/';
-    reportUrl: string =  'MasterDetailReport';
+    reportUrl: string =  'DrillDownReport';
     invokeAction: string = 'DXXRDV';
 
     showInfo = () => {
@@ -32,6 +32,7 @@ export class ReportingViewerComponent implements AfterViewInit {
             hasError && this.showInfo();
         }, 700)    
     }
+    
 }
 
 @NgModule({
