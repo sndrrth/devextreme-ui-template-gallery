@@ -1,6 +1,6 @@
 
 
-import { Component,  NgModule, AfterViewInit } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DxToolbarModule } from 'devextreme-angular';
 import { DxReportViewerModule } from 'devexpress-reporting-angular';
@@ -9,7 +9,7 @@ import { DxReportViewerModule } from 'devexpress-reporting-angular';
     templateUrl: './reporting-viewer.component.html',
     styleUrls: ['./reporting-viewer.component.scss'],
 })
-export class ReportingViewerComponent implements AfterViewInit {
+export class ReportingViewerComponent {
     title = 'DXReportViewerSample';
     hostUrl: string = 'https://demos.devexpress.com/Embedded/NetCore/Reporting/';
     reportUrl: string =  'DrillDownReport';
@@ -17,22 +17,24 @@ export class ReportingViewerComponent implements AfterViewInit {
 
     showInfo = () => {
         const cmd = '"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" --disable-web-security --user-data-dir="C:/ChromeDevSession"';
-        navigator.clipboard.writeText(cmd);
+    
+        // The demo runs on HTTP but the clipboard API requires HTTPS
+        // navigator.clipboard.writeText(cmd);
+        const input = document.createElement("input");
+        input.value = cmd;
+        document.body.append(input);
+        input.focus();
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+
         alert([
             'Chrome mit folgendem Befehl starten:',
             cmd,
             '',
             'Befehl wurde in Zwischenablage kopiert. Ausführen mit Windows + R'
-        ].join('\n'))
+        ].join('\n'));
     }
-
-    ngAfterViewInit(): void {
-        setTimeout(() => {
-            const hasError = document.querySelector('.dx-toast-message')?.textContent.startsWith('Could not open report');
-            hasError && this.showInfo();
-        }, 700)    
-    }
-    
 }
 
 @NgModule({
