@@ -4,7 +4,7 @@ export const navigation = [
     items: [
       {
         text: 'Startseite',
-        path: '',
+        path: '/dashboard',
         icon: 'home',
       },
       {

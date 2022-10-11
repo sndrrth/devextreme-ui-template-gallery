@@ -1,0 +1,28 @@
+@use "../../../variables.scss" as *;
+
+.view-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+
+    ::ng-deep {
+        > .dx-toolbar {
+            padding: 20px 20px 11px;
+            border-bottom: 1px solid $base-border-color;
+        }
+    }
+}
+
+.grid-header {
+    @include header();
+}
+
+dx-dashboard-control {
+    display: block;
+    width: 100%;
+    flex-grow: 1;
+    overflow: auto;
+}

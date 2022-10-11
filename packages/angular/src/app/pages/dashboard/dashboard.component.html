@@ -1,0 +1,19 @@
+<div class="view-wrapper">
+    <dx-toolbar>
+      <dxi-item location="before">
+        <div class="grid-header">Startseite</div>
+      </dxi-item>
+      <dxi-item
+        location="after"
+        locateInMenu="auto"
+        showText="inMenu"
+        widget="dxButton"
+        [options]="{ text: edit ? 'Switch to Viewer' : 'Switch to Designer', icon: edit ? 'close' : 'edit', onClick: toggleMode }"
+      ></dxi-item>
+    </dx-toolbar>
+
+    <dx-dashboard-control 
+        [workingMode]="workingMode"
+        endpoint="https://demos.devexpress.com/services/dashboard/api"
+    ></dx-dashboard-control>
+</div>

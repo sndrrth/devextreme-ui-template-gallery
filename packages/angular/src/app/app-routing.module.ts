@@ -16,6 +16,7 @@ import { PlanningTaskDetailsComponent } from './pages/planning-task-details/plan
 import { AnalyticsDashboardComponent } from './pages/analytics-dashboard/analytics-dashboard.component';
 import { AnalyticsSalesReportComponent } from './pages/analytics-sales-report/analytics-sales-report.component';
 import { AnalyticsGeographyComponent } from './pages/analytics-geography/analytics-geography.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,11 @@ const routes: Routes = [
   {
     path: 'change-password/:recoveryCode',
     component: ChangePasswordFormComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
     canActivate: [AuthGuardService],
   },
   {
