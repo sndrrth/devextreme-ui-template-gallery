@@ -1,4 +1,4 @@
-@use "../node_modules/devextreme/scss/widgets/material/colors" as * with ($color: "blue", $mode: "light");
+@use "../node_modules/devextreme/scss/widgets/material/colors" as * with ($color: "blue", $mode: "light" );
 
 @forward "../node_modules/devextreme/scss/widgets/material/colors";
 
@@ -6,10 +6,16 @@
 @use "sass:color";
 
 $side-panel-min-width: 100px;
+$base-font-family: AdelphiPE;
 $side-panel-background: $base-bg;
 $background-color: $base-bg;
 $accent-color: $base-accent;
 $background-gray-color: color.change($base-text-color, $alpha: 0.04);
+
+@font-face {
+  font-family: $base-font-family;
+  src: url(./assets/AdelphiPEVF-All.ttf) format('truetype');
+}
 
 @mixin separator() {
   .separator {
