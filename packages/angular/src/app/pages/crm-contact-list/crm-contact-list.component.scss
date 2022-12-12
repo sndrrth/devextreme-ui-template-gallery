@@ -42,7 +42,6 @@ $side-panel-toolbar-height: 76px;
 
   .grid-header {
     @include header();
-    font-variation-settings: "wght" 600;
   }
 
   ::ng-deep {
@@ -69,7 +68,6 @@ $side-panel-toolbar-height: 76px;
     }
 
     .dx-tab-content, .dx-tab-text {
-      font-variation-settings: "wght" 500;
       text-transform: none;
     }
 
