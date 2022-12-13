@@ -85,6 +85,10 @@ export class SideNavOuterToolbarComponent implements OnInit, OnDestroy {
     return !this.menuOpened;
   }
 
+  toggleMenu() {
+    this.menuOpened = !this.menuOpened;
+  }
+
   navigationChanged(event: ItemClickEvent) {
     const path = (event.itemData as any).path;
     const pointerEvent = event.event;

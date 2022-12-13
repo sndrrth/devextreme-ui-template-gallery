@@ -29,6 +29,10 @@
   color: $base-accent;
 }
 
+::ng-deep .header-title:not(.with-menu-button) {
+  padding-left: 18px !important;
+}
+
 :host-context(.dx-theme-generic) {
   .dx-toolbar {
     padding: 10px 0;

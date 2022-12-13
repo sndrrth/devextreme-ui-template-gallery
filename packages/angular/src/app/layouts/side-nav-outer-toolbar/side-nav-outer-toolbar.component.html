@@ -1,6 +1,6 @@
 <app-header
   class="layout-header"
-  [menuToggleEnabled]="true"
+  [menuToggleEnabled]="minMenuSize === 0"
   (menuToggle)="menuOpened = !menuOpened"
   [title]="title"
 >
@@ -18,11 +18,13 @@
 >
   <app-side-navigation-menu
     [compactMode]="!menuOpened"
+    [showToggleMenuButton]="minMenuSize > 0"
     [selectedItem]="selectedRoute"
     class="dx-swatch-additional"
     *dxTemplate="let dataMenu of 'panel'"
     (selectedItemChanged)="navigationChanged($event)"
     (openMenu)="navigationClick()"
+    (toggleMenu)="toggleMenu()"
   >
   </app-side-navigation-menu>
 

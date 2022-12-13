@@ -6,7 +6,7 @@ import { DxTreeViewModule, DxTreeViewComponent } from 'devextreme-angular/ui/tre
 import * as events from 'devextreme/events';
 import { navigation } from '../../../app-navigation';
 import { CommonModule } from '@angular/common';
-import { DxScrollViewModule } from 'devextreme-angular';
+import { DxButtonModule, DxScrollViewModule } from 'devextreme-angular';
 
 @Component({
   selector: 'app-side-navigation-menu',
@@ -17,11 +17,17 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
   @ViewChildren(DxTreeViewComponent)
   menu!: QueryList<DxTreeViewComponent>;
 
+  @Input()
+  showToggleMenuButton = false;
+
   @Output()
   selectedItemChanged = new EventEmitter<ItemClickEvent>();
 
   @Output()
   openMenu = new EventEmitter<any>();
+
+  @Output()
+  toggleMenu = new EventEmitter<any>();
 
   navigation = navigation;
 
@@ -66,7 +72,7 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
 }
 
 @NgModule({
-  imports: [DxTreeViewModule, DxScrollViewModule, CommonModule],
+  imports: [DxTreeViewModule, DxScrollViewModule, CommonModule, DxButtonModule],
   declarations: [SideNavigationMenuComponent],
   exports: [SideNavigationMenuComponent],
 })
