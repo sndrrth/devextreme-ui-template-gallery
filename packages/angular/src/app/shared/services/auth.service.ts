@@ -3,6 +3,7 @@ import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
 
 export interface IUser {
   email: string;
+  title?: string;
   name?: string;
   avatarUrl?: string
 }
@@ -11,6 +12,7 @@ const defaultPath = '/';
 const defaultUser = {
   email: 'jheart@dx-email.com',
   name: 'John Heart',
+  title: 'Product Manager',
   avatarUrl: 'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/01.png',
 };
 
