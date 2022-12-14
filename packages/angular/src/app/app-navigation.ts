@@ -1,3 +1,7 @@
+
+import { faHouse, faClockRotateLeft, faChartPieSimple, faFileLines, faBuilding, faUserGroup, faStar, faPencil } from '@fortawesome/pro-light-svg-icons';
+import { icon } from '@fortawesome/fontawesome-svg-core';
+
 export const navigation = [
   {
     label: '',
@@ -5,17 +9,17 @@ export const navigation = [
       {
         text: 'Startseite',
         path: '/dashboard',
-        icon: 'home',
+        icon: icon(faHouse).html[0],
       },
       {
         text: 'Zuletzt verwendet',
         path: '',
-        icon: 'clock'
+        icon: icon(faClockRotateLeft).html[0],
       },
       {
         text: 'Favoriten',
         path: '',
-        icon: 'favorites',
+        icon: icon(faStar).html[0],
       },
     ]
   },
@@ -25,22 +29,22 @@ export const navigation = [
       {
         text: 'Dashboard',
         path: '/analytics-dashboard',
-        icon: 'chart',
+        icon: icon(faChartPieSimple).html[0],
       },
       {
         text: 'Verträge',
         path: '/crm-contact-list',
-        icon: 'textdocument',
+        icon: icon(faFileLines).html[0],
       },
       {
         text: 'Vertragsdetails',
         path: '/crm-contact-details',
-        icon: 'edit',
+        icon: icon(faPencil).html[0],
       },
       {
         text: 'Fristen',
         path: '',
-        icon: 'edit',
+        icon: icon(faPencil).html[0],
       },
     ],
   },
@@ -50,57 +54,57 @@ export const navigation = [
       {
         text: 'Alle Verträge',
         path: '/planning-task-list',
-        icon: 'textdocument',
+        icon: icon(faFileLines).html[0],
       },
       {
         text: 'Abonnementsvertrag',
         path: '/planning-task-details',
-        icon: 'edit',
+        icon: icon(faPencil).html[0],
       },
       {
         text: 'Dienstleistungsvertrag',
         path: '/reporting-viewer',
-        icon: 'textdocument',
+        icon: icon(faFileLines).html[0],
       },
       {
         text: 'Finanzvertrag',
         path: '',
-        icon: 'textdocument',
+        icon: icon(faFileLines).html[0],
       },
       {
         text: 'Geheimhaltungsvereinbarung',
         path: '',
-        icon: 'textdocument',
+        icon: icon(faFileLines).html[0],
       },
       {
         text: 'IT Vertrag',
         path: '',
-        icon: 'textdocument',
+        icon: icon(faFileLines).html[0],
       },
       {
         text: 'Kaufvertrag',
         path: '',
-        icon: 'textdocument',
+        icon: icon(faFileLines).html[0],
       },
       {
         text: 'Leasingvertrag',
         path: '',
-        icon: 'textdocument',
+        icon: icon(faFileLines).html[0],
       },
       {
         text: 'Mietvertrag',
         path: '',
-        icon: 'textdocument',
+        icon: icon(faFileLines).html[0],
       },
       {
         text: 'Wartungsvertrag',
         path: '',
-        icon: 'textdocument',
+        icon: icon(faFileLines).html[0],
       },
       {
         text: 'Werkvertrag',
         path: '',
-        icon: 'textdocument',
+        icon: icon(faFileLines).html[0],
       },
     ],
   },
@@ -110,12 +114,12 @@ export const navigation = [
       {
         text: 'Firmen',
         path: '',
-        icon: 'folder',
+        icon: icon(faBuilding).html[0],
       },
       {
         text: 'Kontakte',
         path: '',
-        icon: 'group',
+        icon: icon(faUserGroup).html[0],
       },
     ],
   },

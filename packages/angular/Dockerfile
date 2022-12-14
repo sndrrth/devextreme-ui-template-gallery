@@ -1,7 +1,9 @@
 ### STAGE 1: Build ###
 FROM node:16-alpine AS build
 WORKDIR /usr/src/app
-COPY package.json package-lock.json ./
+ARG FONTAWESOME_NPM_AUTH_TOKEN
+ENV FONTAWESOME_NPM_AUTH_TOKEN=$FONTAWESOME_NPM_AUTH_TOKEN
+COPY package.json package-lock.json .npmrc ./
 RUN npm install --force
 COPY . .
 RUN npm run build

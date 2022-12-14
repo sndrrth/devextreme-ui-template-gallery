@@ -7,6 +7,8 @@ import * as events from 'devextreme/events';
 import { navigation } from '../../../app-navigation';
 import { CommonModule } from '@angular/common';
 import { DxButtonModule, DxScrollViewModule } from 'devextreme-angular';
+import { faBars } from '@fortawesome/pro-light-svg-icons';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-side-navigation-menu',
@@ -30,6 +32,7 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
   toggleMenu = new EventEmitter<any>();
 
   navigation = navigation;
+  barIcon = icon(faBars).html[0]
 
   @Input()
   set selectedItem(value: String) {

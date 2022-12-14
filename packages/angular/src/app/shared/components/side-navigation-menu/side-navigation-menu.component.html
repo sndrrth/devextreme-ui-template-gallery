@@ -1,7 +1,7 @@
 <dx-scroll-view>
   <div class="menu-container" [attr.data-compact]="_compactMode">
     <div *ngIf="showToggleMenuButton" class="menu-toggle">
-      <dx-button icon="menu" type="default" stylingMode="text" (onClick)="toggleMenu.emit()"></dx-button>
+      <dx-button [icon]="barIcon" type="default" stylingMode="text" (onClick)="toggleMenu.emit()"></dx-button>
     </div>
 
     <div *ngFor="let group of navigation" class="menu-group">

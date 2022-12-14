@@ -6,7 +6,7 @@
       widget="dxButton"
       cssClass="menu-button"
       [options]="{
-        icon: 'menu',
+        icon: barIcon,
         stylingMode: 'text',
         onClick: toggleMenu
       }"
@@ -32,17 +32,36 @@
       }"
     >
     </dxi-item>
-    <dxi-item
-      location="after"
-    >
+   
+    <dxi-item location="after">
       <div *dxTemplate>
-        <div class="messages">
-          <div class="dx-icon-message">
-            <div class="dx-badge">4</div>
-          </div>
+        <div class="btn-with-badge">
+          <dx-button [icon]="bellIcon"></dx-button>
+          <div class="dx-badge">4</div>
         </div>
       </div>
     </dxi-item>
+
+    <dxi-item
+      location="after"
+      widget="dxButton"
+      cssClass="header-icon-btn"
+      [options]="{
+        icon: userGearIcon,
+        stylingMode: 'text'
+      }"
+    ></dxi-item>
+
+    <dxi-item
+      location="after"
+      widget="dxButton"
+      cssClass="header-icon-btn"
+      [options]="{
+        icon: circleQuestionIcon,
+        stylingMode: 'text'
+      }"
+    ></dxi-item>
+
     <dxi-item
       location="after"
       locateInMenu="auto"
