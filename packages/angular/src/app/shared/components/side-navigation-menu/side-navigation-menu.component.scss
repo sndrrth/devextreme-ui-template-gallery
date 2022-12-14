@@ -1,6 +1,20 @@
 /* stylelint-disable no-duplicate-selectors */
 @use "../../../../variables.scss" as *;
 
+:host {
+  position: relative;
+}
+
+.border {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3px;
+  opacity: 0.5;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0.1) 1px, rgba(0, 0, 0, 0) 100% );
+}
+
 .menu-container {
   padding: 16px 0;
 }

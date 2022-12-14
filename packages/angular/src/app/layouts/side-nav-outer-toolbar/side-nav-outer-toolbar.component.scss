@@ -7,10 +7,6 @@
   width: 100%;
 }
 
-:host ::ng-deep .dx-drawer-panel-content {
-  border-right: 1px solid $base-border-color;
-}
-
 .layout-body {
   flex: 1;
   min-height: 0;

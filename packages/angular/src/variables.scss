@@ -6,7 +6,7 @@
 @use "sass:color";
 
 $side-panel-min-width: 100px;
-$side-panel-background: $base-bg;
+$side-panel-background: #fafbfc;
 $background-color: $base-bg;
 $accent-color: $base-accent;
 $background-gray-color: color.change($base-text-color, $alpha: 0.04);
