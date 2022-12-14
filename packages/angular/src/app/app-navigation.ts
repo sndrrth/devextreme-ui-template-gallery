@@ -1,5 +1,14 @@
 
 import { faHouse, faClockRotateLeft, faChartPieSimple, faFileLines, faBuilding, faUserGroup, faStar, faPencil } from '@fortawesome/pro-light-svg-icons';
+import { faHouse as fa2House,
+   faClockRotateLeft as fa2ClockRotateLeft,
+   faChartPieSimple as fa2ChartPieSimple,
+   faFileLines as fa2FileLines,
+   faBuilding as fa2Building,
+   faUserGroup as fa2UserGroup,
+   faStar as fa2Star,
+   faPencil as fa2Pencil 
+} from '@fortawesome/pro-duotone-svg-icons';
 import { icon } from '@fortawesome/fontawesome-svg-core';
 
 export const navigation = [
@@ -9,17 +18,17 @@ export const navigation = [
       {
         text: 'Startseite',
         path: '/dashboard',
-        icon: icon(faHouse).html[0],
+        icon: icon(fa2House).html[0],
       },
       {
         text: 'Zuletzt verwendet',
         path: '',
-        icon: icon(faClockRotateLeft).html[0],
+        icon: icon(fa2ClockRotateLeft).html[0],
       },
       {
         text: 'Favoriten',
         path: '',
-        icon: icon(faStar).html[0],
+        icon: icon(fa2Star).html[0],
       },
     ]
   },
@@ -29,22 +38,22 @@ export const navigation = [
       {
         text: 'Dashboard',
         path: '/analytics-dashboard',
-        icon: icon(faChartPieSimple).html[0],
+        icon: icon(fa2ChartPieSimple).html[0],
       },
       {
         text: 'Verträge',
         path: '/crm-contact-list',
-        icon: icon(faFileLines).html[0],
+        icon: icon(fa2FileLines).html[0],
       },
       {
         text: 'Vertragsdetails',
         path: '/crm-contact-details',
-        icon: icon(faPencil).html[0],
+        icon: icon(fa2Pencil).html[0],
       },
       {
         text: 'Fristen',
         path: '',
-        icon: icon(faPencil).html[0],
+        icon: icon(fa2Pencil).html[0],
       },
     ],
   },
