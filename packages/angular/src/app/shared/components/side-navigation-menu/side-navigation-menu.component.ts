@@ -6,7 +6,7 @@ import { DxTreeViewModule, DxTreeViewComponent } from 'devextreme-angular/ui/tre
 import * as events from 'devextreme/events';
 import { navigation } from '../../../app-navigation';
 import { CommonModule } from '@angular/common';
-import { DxButtonModule, DxScrollViewModule } from 'devextreme-angular';
+import { DxScrollViewModule } from 'devextreme-angular';
 import { faBars } from '@fortawesome/pro-light-svg-icons';
 import { icon } from '@fortawesome/fontawesome-svg-core';
 
@@ -19,17 +19,11 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
   @ViewChildren(DxTreeViewComponent)
   menu!: QueryList<DxTreeViewComponent>;
 
-  @Input()
-  showToggleMenuButton = false;
-
   @Output()
   selectedItemChanged = new EventEmitter<ItemClickEvent>();
 
   @Output()
   openMenu = new EventEmitter<any>();
-
-  @Output()
-  toggleMenu = new EventEmitter<any>();
 
   navigation = navigation;
   barIcon = icon(faBars).html[0]
@@ -75,7 +69,7 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
 }
 
 @NgModule({
-  imports: [DxTreeViewModule, DxScrollViewModule, CommonModule, DxButtonModule],
+  imports: [DxTreeViewModule, DxScrollViewModule, CommonModule],
   declarations: [SideNavigationMenuComponent],
   exports: [SideNavigationMenuComponent],
 })
