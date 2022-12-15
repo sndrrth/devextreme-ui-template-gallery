@@ -7,8 +7,8 @@ import { faHouse,
    faStar,
    faFileChartColumn,
    faBell,
-   faCircleNotch,
 } from '@fortawesome/pro-duotone-svg-icons';
+import { faSquare, } from '@fortawesome/pro-solid-svg-icons';
 import { icon } from '@fortawesome/fontawesome-svg-core';
 
 export const navigation = [
@@ -99,37 +99,37 @@ export const navigation = [
       {
         text: 'Entwurf',
         path: '',
-        icon: icon(faCircleNotch).html[0],
+        icon: icon(faSquare, { styles: { color: '#03a9f4' }}).html[0],
         badge: 2,
       },
       {
         text: 'Prüfung',
         path: '',
-        icon: icon(faCircleNotch).html[0],
+        icon: icon(faSquare, { styles: { color: '#f1eb05' }}).html[0],
         badge: 7,
       },
       {
         text: 'Unterzeichnung',
         path: '',
-        icon: icon(faCircleNotch).html[0],
+        icon: icon(faSquare, { styles: { color: '#ffc107' }}).html[0],
         badge: 4,
       },
       {
         text: 'Aktiv',
         path: '',
-        icon: icon(faCircleNotch).html[0],
+        icon: icon(faSquare, { styles: { color: '#2eb52c' }}).html[0],
         badge: 32,
       },
       {
         text: 'Inaktiv',
         path: '',
-        icon: icon(faCircleNotch).html[0],
+        icon: icon(faSquare, { styles: { color: '#b4b4b4' }}).html[0],
         badge: 12,
       },
       {
         text: 'Archiviert',
         path: '',
-        icon: icon(faCircleNotch).html[0],
+        icon: icon(faSquare, { styles: { color: '#b4b4b4' }}).html[0],
         badge: 11,
       },
     ],
