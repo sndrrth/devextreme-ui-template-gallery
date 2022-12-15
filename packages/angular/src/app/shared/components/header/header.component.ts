@@ -9,7 +9,7 @@ import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { Router } from '@angular/router';
 import { UserPanelModule } from '../user-panel/user-panel.component';
 import { AuthService, IUser } from '../../services';
-import { faBars, faBell, faUserGear, faCircleQuestion } from '@fortawesome/pro-light-svg-icons';
+import { faBars, faBell, faUserGear, faCircleQuestion } from '@fortawesome/pro-regular-svg-icons';
 import { icon } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
