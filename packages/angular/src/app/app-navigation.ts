@@ -1,12 +1,13 @@
 
-import { faHouse ,
-   faClockRotateLeft ,
-   faChartPieSimple ,
-   faFileLines ,
-   faBuilding ,
-   faUserGroup ,
-   faStar ,
-   faPencil ,
+import { faHouse,
+   faClockRotateLeft,
+   faFileLines,
+   faBuilding,
+   faUserGroup,
+   faStar,
+   faFileChartColumn,
+   faBell,
+   faCircleNotch,
 } from '@fortawesome/pro-duotone-svg-icons';
 import { icon } from '@fortawesome/fontawesome-svg-core';
 
@@ -20,83 +21,69 @@ export const navigation = [
         icon: icon(faHouse).html[0],
       },
       {
-        text: 'Zuletzt verwendet',
+        text: 'Aufgaben',
         path: '',
-        icon: icon(faClockRotateLeft).html[0],
+        icon: icon(faBell).html[0],
       },
       {
         text: 'Favoriten',
         path: '',
         icon: icon(faStar).html[0],
       },
-    ]
-  },
-  {
-    label: 'Meine Arbeit',
-    items: [
       {
-        text: 'Dashboard',
-        path: '/analytics-dashboard',
-        icon: icon(faChartPieSimple).html[0],
-      },
-      {
-        text: 'Verträge',
-        path: '/crm-contact-list',
-        icon: icon(faFileLines).html[0],
-      },
-      {
-        text: 'Vertragsdetails',
-        path: '/crm-contact-details',
-        icon: icon(faPencil).html[0],
-      },
-      {
-        text: 'Fristen',
+        text: 'Zuletzt verwendet',
         path: '',
-        icon: icon(faPencil).html[0],
+        icon: icon(faClockRotateLeft).html[0],
       },
-    ],
+      {
+        text: 'Berichte',
+        path: '/analytics-dashboard',
+        icon: icon(faFileChartColumn).html[0],
+      },
+      
+    ]
   },
   {
     label: 'Verträge',
     items: [
       {
         text: 'Alle Verträge',
+        path: '/crm-contact-list',
+        icon: icon(faFileLines).html[0],
+      },
+      {
+        text: 'Von mir erstellt',
+        path: '/crm-contact-details',
+        icon: icon(faFileLines).html[0],
+      },
+      {
+        text: 'Auslaufende Verträge',
+        path: '',
+        icon: icon(faFileLines).html[0],
+      },
+      {
+        text: 'Anstehende Verlängerungen',
+        path: '',
+        icon: icon(faFileLines).html[0],
+      },
+    ],
+  },
+  {
+    label: 'Vertragsarten',
+    items: [
+      {
+        text: 'Alle Vertragsarten',
         path: '/planning-task-list',
         icon: icon(faFileLines).html[0],
       },
       {
-        text: 'Abonnementsvertrag',
-        path: '/planning-task-details',
-        icon: icon(faPencil).html[0],
-      },
-      {
         text: 'Dienstleistungsvertrag',
-        path: '/reporting-viewer',
+        path: '/planning-task-details',
         icon: icon(faFileLines).html[0],
       },
       {
         text: 'Finanzvertrag',
-        path: '',
-        icon: icon(faFileLines).html[0],
-      },
-      {
-        text: 'Geheimhaltungsvereinbarung',
-        path: '',
-        icon: icon(faFileLines).html[0],
-      },
-      {
-        text: 'IT Vertrag',
-        path: '',
-        icon: icon(faFileLines).html[0],
-      },
-      {
-        text: 'Kaufvertrag',
-        path: '',
-        icon: icon(faFileLines).html[0],
-      },
-      {
-        text: 'Leasingvertrag',
-        path: '',
+        path: '/reporting-viewer',
         icon: icon(faFileLines).html[0],
       },
       {
@@ -104,15 +91,40 @@ export const navigation = [
         path: '',
         icon: icon(faFileLines).html[0],
       },
+    ],
+  },
+  {
+    label: 'Status',
+    items: [
       {
-        text: 'Wartungsvertrag',
+        text: 'Entwurf',
         path: '',
-        icon: icon(faFileLines).html[0],
+        icon: icon(faCircleNotch).html[0],
       },
       {
-        text: 'Werkvertrag',
+        text: 'Prüfung',
         path: '',
-        icon: icon(faFileLines).html[0],
+        icon: icon(faCircleNotch).html[0],
+      },
+      {
+        text: 'Unterzeichnung',
+        path: '',
+        icon: icon(faCircleNotch).html[0],
+      },
+      {
+        text: 'Aktiv',
+        path: '',
+        icon: icon(faCircleNotch).html[0],
+      },
+      {
+        text: 'Inaktiv',
+        path: '',
+        icon: icon(faCircleNotch).html[0],
+      },
+      {
+        text: 'Archiviert',
+        path: '',
+        icon: icon(faCircleNotch).html[0],
       },
     ],
   },
