@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { DxScrollViewModule } from 'devextreme-angular';
 import { faBars } from '@fortawesome/pro-light-svg-icons';
 import { icon } from '@fortawesome/fontawesome-svg-core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-side-navigation-menu',
@@ -51,7 +52,11 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
     this._compactMode = val;
   }
 
-  constructor(private elementRef: ElementRef) { }
+  constructor(private elementRef: ElementRef, private sanitizer: DomSanitizer) { }
+
+  svg(html: string) {
+    return this.sanitizer.bypassSecurityTrustHtml(html);
+  }
 
   onItemClick(event: ItemClickEvent) {
     this.selectedItemChanged.emit(event);

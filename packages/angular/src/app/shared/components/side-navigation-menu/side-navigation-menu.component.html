@@ -14,6 +14,11 @@
         (onItemClick)="onItemClick($event)"
         width="100%"
       >
+        <ng-container *dxTemplate="let item of 'item'">
+          <i class="dx-icon dx-svg-icon" [innerHTML]="svg(item.icon)"></i>
+          <span class="menu-item-text">{{ item.text }}</span>
+          <span *ngIf="item.badge" class="menu-item-badge">{{ item.badge }}</span>
+        </ng-container>
       </dx-tree-view>
     </div>
   </div>

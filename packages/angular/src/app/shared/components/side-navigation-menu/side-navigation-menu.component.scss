@@ -93,6 +93,8 @@
   width: 250px !important;
   background-color: $side-panel-background;
 
+
+  
   .menu-container {
     min-height: 100%;
     flex: 1;
@@ -135,6 +137,29 @@
           display: inline-block;
           box-sizing: content-box;
         }
+      }
+
+      .dx-item-content {
+        display: flex;
+        align-items: center;
+      }
+
+      .menu-item-text {
+        flex-grow: 1;
+      }
+
+      .menu-item-badge {
+        background-color: #DFE1E6;
+        color: #172B4D;
+        display: inline-flex;
+        position: relative;
+        margin-inline-end: 10px;
+        padding-block: 2px;
+        padding-inline: 6px;
+        border-radius: 8px;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: center;
       }
 
       // ##
