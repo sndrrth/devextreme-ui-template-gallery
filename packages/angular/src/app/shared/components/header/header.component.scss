@@ -3,10 +3,21 @@
 :host {
   flex: 0 0 auto;
   z-index: 1;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05), 0 0 4px rgba(0, 0, 0, 0.15);
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05), 0 0 4px rgba(0, 0, 0, 0.15);
+  position: relative;
 
-  ::ng-deep .dx-toolbar .dx-toolbar-item.menu-button > .dx-toolbar-item-content .dx-icon {
-    color: $base-accent;
+  ::ng-deep .toolbar-btn .dx-icon {
+    color: #fff !important;
+  }
+
+  &::after {
+    height: 4px;
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    left: 0px;
+    background: linear-gradient(rgba(9, 30, 66, 0.13) 0px, rgba(9, 30, 66, 0.13) 1px, rgba(9, 30, 66, 0.08) 1px, rgba(9, 30, 66, 0) 4px);
+    content: "";
   }
 }
 
@@ -26,7 +37,6 @@
 ::ng-deep .header-title .dx-item-content {
   padding: 0;
   margin: 0;
-  color: $base-accent;
 }
 
 :host-context(.dx-theme-generic) {
@@ -48,7 +58,8 @@
 
 header {
   padding: 5px 0;
-  background-color: $base-bg;
+  background-color: #0078d4;
+  color: #fff;
 
   .user-button.authorization {
     margin-left: 10px;
@@ -57,12 +68,31 @@ header {
   ::ng-deep .header-icon-btn {
     padding-left: 12px;
   }
+
+  ::ng-deep .dx-toolbar {
+    background-color: #0078d4 !important;
+    color: #fff !important;
+  }
+
+  ::ng-deep .search-input {
+    .dx-texteditor.dx-editor-outlined {
+      background-color: #fff !important;
+      box-shadow: none !important;
+    }
+
+    .dx-icon-search::before, .dx-placeholder {
+      color: #0078d4 !important;
+    }
+  }
 }
 
 .btn-with-badge {
   position: relative;
 }
 
+:host ::ng-deep .toolbar-btn {
+  color: #fff;
+}
 
 
 .dx-badge {

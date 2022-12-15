@@ -4,7 +4,7 @@
       *ngIf="menuToggleEnabled"
       location="before"
       widget="dxButton"
-      cssClass="menu-button"
+      cssClass="menu-button toolbar-btn"
       [options]="{
         icon: barIcon,
         stylingMode: 'text',
@@ -35,8 +35,8 @@
    
     <dxi-item location="after">
       <div *dxTemplate>
-        <div class="btn-with-badge">
-          <dx-button [icon]="bellIcon"></dx-button>
+        <div class="btn-with-badge toolbar-btn">
+          <dx-button [icon]="bellIcon" stylingMode="text"></dx-button>
           <div class="dx-badge">4</div>
         </div>
       </div>
@@ -45,7 +45,7 @@
     <dxi-item
       location="after"
       widget="dxButton"
-      cssClass="header-icon-btn"
+      cssClass="header-icon-btn toolbar-btn"
       [options]="{
         icon: userGearIcon,
         stylingMode: 'text'
@@ -55,7 +55,7 @@
     <dxi-item
       location="after"
       widget="dxButton"
-      cssClass="header-icon-btn"
+      cssClass="header-icon-btn toolbar-btn"
       [options]="{
         icon: circleQuestionIcon,
         stylingMode: 'text'
@@ -70,7 +70,7 @@
     >
       <div *dxTemplate="let data of 'item'">
         <dx-button
-          class="user-button authorization"
+          class="user-button authorization toolbar-btn"
           height="100%"
           stylingMode="text"
         >
