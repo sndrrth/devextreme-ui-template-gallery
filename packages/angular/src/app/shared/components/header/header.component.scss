@@ -96,12 +96,17 @@ header {
 
 
 .dx-badge {
-  display: block;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  background-color: $base-accent;
-  color: white;
-  right: -3px;
-  top: -6px;
-  font-size: 12px;
-  padding: 0 4px;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #0078d4;
+  right: 0;
+  top: -3px;
+  font-size: 10px;
 }
