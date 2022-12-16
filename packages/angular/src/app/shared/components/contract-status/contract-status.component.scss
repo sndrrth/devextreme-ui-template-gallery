@@ -35,7 +35,7 @@ span.status {
     @include status(#f44336);
   }
 
-  &.status-prüfung {
+  &.status-pruefung {
     @include status(#ffc107);
   }
 

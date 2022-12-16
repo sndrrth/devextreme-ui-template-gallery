@@ -7,7 +7,7 @@ import { ContactStatus } from 'src/app/shared/types/contact';
 @Component({
   selector: 'contract-status',
   template: `
-  <span class="{{ input && 'input' }} status status-{{ value | lowercase }}">{{ value }}</span>
+  <span class="{{ input ? 'input' : '' }} status status-{{ statusMapping[value] }}">{{ value }}</span>
 `,
   styleUrls: ['./contract-status.component.scss'],
 })
@@ -15,6 +15,14 @@ export class ContractStatusComponent {
   @Input() value: ContactStatus;
 
   @Input() input?: boolean = false;
+
+  readonly statusMapping: Record<string, string> = {
+    'Abgelehnt': 'abgelehnt',
+    'Aktiv': 'aktiv',
+    'Entwurf': 'entwurf',
+    'Prüfung': 'pruefung',
+  };
+  
 }
 
 @NgModule({
