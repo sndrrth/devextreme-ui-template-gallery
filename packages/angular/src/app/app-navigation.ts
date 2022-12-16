@@ -8,9 +8,9 @@ import { faHouse,
    faFileChartColumn,
    faBell,
    faFileContract,
-   faFileUser,
-   faFileExclamation,
-   faFileCheck,
+   faUserPlus,
+   faCalendarClock,
+   faCalendarCheck,
 } from '@fortawesome/pro-regular-svg-icons';
 import { faSquare, } from '@fortawesome/pro-solid-svg-icons';
 import { icon } from '@fortawesome/fontawesome-svg-core';
@@ -58,17 +58,17 @@ export const navigation = [
       {
         text: 'Von mir erstellt',
         path: '/crm-contact-details',
-        icon: icon(faFileUser).html[0],
+        icon: icon(faUserPlus).html[0],
       },
       {
         text: 'Auslaufende Verträge',
         path: '',
-        icon: icon(faFileExclamation).html[0],
+        icon: icon(faCalendarClock).html[0],
       },
       {
         text: 'Anstehende Verlängerungen',
         path: '',
-        icon: icon(faFileCheck).html[0],
+        icon: icon(faCalendarCheck).html[0],
       },
     ],
   },
