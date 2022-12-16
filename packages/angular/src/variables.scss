@@ -1,4 +1,8 @@
-@use "../node_modules/devextreme/scss/widgets/material/colors" as * with ($color: "blue", $mode: "light");
+@use "../node_modules/devextreme/scss/widgets/material/colors" as * with (
+  $color: "blue",
+  $mode: "light",
+  $base-accent: #008299
+);
 
 @forward "../node_modules/devextreme/scss/widgets/material/colors";
 

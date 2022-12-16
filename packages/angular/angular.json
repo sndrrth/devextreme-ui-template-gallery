@@ -47,12 +47,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/devextreme/scss/bundles/dx.material.blue.light.compact.scss",
-              "node_modules/devexpress-gantt/dist/dx-gantt.css",
-              "src/dx-styles.scss",
-              "src/styles.scss",
-              "src/dx-dashboard.scss",
-              "src/dx-reporting.scss"
+              "src/app.scss"
             ],
             "scripts": []
           },

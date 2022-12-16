@@ -58,7 +58,7 @@
 
 header {
   padding: 5px 0;
-  background-color: #0078d4;
+  background-color: #008299;
   color: #fff;
 
   .user-button.authorization {
@@ -70,7 +70,7 @@ header {
   }
 
   ::ng-deep .dx-toolbar {
-    background-color: #0078d4 !important;
+    background-color: #008299 !important;
     color: #fff !important;
   }
 
@@ -81,7 +81,7 @@ header {
     }
 
     .dx-icon-search::before, .dx-placeholder {
-      color: #0078d4 !important;
+      color: #008299 !important;
     }
   }
 }
@@ -105,7 +105,7 @@ header {
   margin: 0;
   padding: 0;
   background-color: #fff;
-  color: #0078d4;
+  color: #008299;
   right: 0;
   top: -3px;
   font-size: 10px;
