@@ -1,14 +1,12 @@
 @use "vars" as *;
+@use 'utils';
+@use 'overrides';
 
 :host {
   flex: 0 0 auto;
   z-index: 1;
   // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05), 0 0 4px rgba(0, 0, 0, 0.15);
   position: relative;
-
-  ::ng-deep .toolbar-btn .dx-icon {
-    color: #fff !important;
-  }
 
   &::after {
     height: 4px;
@@ -49,17 +47,17 @@
   }
 }
 
-.header-toolbar ::ng-deep {
-  .dx-texteditor.dx-editor-outlined {
-    border-radius: 4px;
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,.18);
+:host ::ng-deep .search-input {
+  @include overrides.dx-texteditor-outlined() {
+    box-shadow: none;
+    background-color: utils.color('background', 'neutral-lightest');
   }
 }
 
 header {
   padding: 5px 0;
-  background-color: #008299;
-  color: #fff;
+  background-color: utils.color('background', 'primary');
+  color: utils.color('foreground', 'neutral-lightest');
 
   .user-button.authorization {
     margin-left: 10px;
@@ -68,22 +66,6 @@ header {
   ::ng-deep .header-icon-btn {
     padding-left: 12px;
   }
-
-  ::ng-deep .dx-toolbar {
-    background-color: #008299 !important;
-    color: #fff !important;
-  }
-
-  ::ng-deep .search-input {
-    .dx-texteditor.dx-editor-outlined {
-      background-color: #fff !important;
-      box-shadow: none !important;
-    }
-
-    .dx-icon-search::before, .dx-placeholder {
-      color: #008299 !important;
-    }
-  }
 }
 
 .btn-with-badge {
@@ -91,11 +73,13 @@ header {
 }
 
 :host ::ng-deep .toolbar-btn {
-  color: #fff;
+  @include overrides.dx-button-icon() {
+    color: utils.color('foreground', 'neutral-lightest');
+  }
 }
 
 
-.dx-badge {
+.badge {
   width: 16px;
   height: 16px;
   display: flex;
@@ -104,9 +88,11 @@ header {
   position: absolute;
   margin: 0;
   padding: 0;
+  border-radius: 99999px;
   background-color: #fff;
   color: #008299;
   right: 0;
   top: -3px;
   font-size: 10px;
+  line-height: 1;
 }

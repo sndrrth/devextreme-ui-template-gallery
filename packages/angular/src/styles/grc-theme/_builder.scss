@@ -1,0 +1,7 @@
+@use "./core/color.builder" as color-builder;
+
+@mixin build-theme($theme) {
+	:root {
+		@include color-builder.props($theme);
+	}
+}

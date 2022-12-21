@@ -1,0 +1,184 @@
+@use "palettes";
+@use "sass:map";
+@use "sass:math";
+
+@function rem($px) {
+	@return #{math.div($px, 16)}rem;
+}
+
+$grc-light-theme: (
+	space: (
+		0: rem(0),
+		1: rem(4),
+		2: rem(8),
+		3: rem(12),
+		4: rem(16),
+		5: rem(20),
+		6: rem(24),
+		7: rem(28),
+		8: rem(32),
+		9: rem(36),
+		10: rem(40),
+		11: rem(44),
+		12: rem(48),
+		13: rem(52),
+		14: rem(56),
+		15: rem(60),
+	),
+	radius: (
+		0: 0,
+		xs: 2px,
+		sm: 4px,
+		md: 6px,
+		lg: 8px,
+		xl: 12px,
+		round: 999999px,
+	),
+	color: (
+		primary: palettes.$primary,
+		secondary: palettes.$secondary,
+    neutral: palettes.$neutral,
+    signal-positive: palettes.$signal-positive,
+    signal-danger: palettes.$signal-danger,
+    signal-warning: palettes.$signal-warning,
+
+		background: (
+			
+			neutral-lightest: map.get(palettes.$neutral, 100), 
+			neutral-light: map.get(palettes.$neutral, 95),
+
+			primary-pressed: map.get(palettes.$primary, 10),
+			primary-hover: map.get(palettes.$primary, 20),
+			primary-rest: map.get(palettes.$primary, 30),
+			primary-active-pressed: map.get(palettes.$primary, 50),    
+			primary-active-hover: map.get(palettes.$primary, 60),
+			primary-active: map.get(palettes.$primary, 70),
+			disabled: map.get(palettes.$neutral, 99),
+
+			primary: map.get(palettes.$primary, 30),
+			primary-lightest: map.get(palettes.$primary, 60), /* Not defined in design system */
+
+			signal-positive: map.get(palettes.$signal-positive, 30),
+			signal-positive-lighter: map.get(palettes.$signal-positive, 50),
+			signal-warning: map.get(palettes.$signal-warning, 30),
+			signal-warning-lighter: map.get(palettes.$signal-warning, 60),
+			signal-danger: map.get(palettes.$signal-danger, 30),
+			signal-danger-lighter: map.get(palettes.$signal-danger, 50),
+      
+		),
+		foreground: (
+      neutral-darkest: map.get(palettes.$neutral, 0),
+      neutral-dark: map.get(palettes.$neutral, 10),
+      neutral: map.get(palettes.$neutral, 60),
+      neutral-light: map.get(palettes.$neutral, 95),
+      neutral-lightest: map.get(palettes.$neutral, 100),
+
+      primary-pressed: map.get(palettes.$primary, 10),
+      primary-hover: map.get(palettes.$primary, 20),
+      primary-rest: map.get(palettes.$primary, 30),
+      disabled: map.get(palettes.$neutral, 60),  
+
+      secondary-darker: map.get(palettes.$secondary, 0),
+      secondary-dark: map.get(palettes.$secondary, 20),
+      secondary: map.get(palettes.$secondary, 30),
+
+      signal-positive: map.get(palettes.$signal-positive, 10),
+      signal-warning: map.get(palettes.$signal-warning, 10),
+      signal-danger: map.get(palettes.$signal-danger, 10),
+		),
+		border: (
+			primary-pressed: map.get(palettes.$primary, 10),
+			primary-hover: map.get(palettes.$primary, 20),
+			primary-rest: map.get(palettes.$primary, 30),
+			disabled: map.get(palettes.$neutral, 99),
+
+			secondary-light: map.get(palettes.$secondary, 40),
+
+			neutral-light: map.get(palettes.$neutral, 95), /* TODO: Fix */
+		),
+		outline: (
+			primary-focused: map.get(palettes.$primary, 'alpha-40'),
+		),
+	),
+	font-family: (
+		default: (
+			Roboto,
+			Helvetica,
+			Arial,
+			sans-serif,
+		),
+	),
+	font-size: (
+		display-lg: rem(57),
+		display-md: rem(45),
+		display-sm: rem(36),
+		headline-lg: rem(32),
+		headline-md: rem(28),
+		headline-sm: rem(24),
+		title-lg: rem(22),
+		title-md: rem(16),
+		title-sm: rem(14),
+		label-lg: rem(14),
+		label-md: rem(12),
+		label-sm: rem(11),
+		body-lg: rem(16),
+		body-md: rem(14),
+		body-sm: rem(12),
+	),
+	line-height: (
+		display-lg: math.div(64, 57),
+		display-md: math.div(52, 45),
+		display-sm: math.div(44, 36),
+		headline-lg: math.div(40, 32),
+		headline-md: math.div(36, 28),
+		headline-sm: math.div(32, 24),
+		title-lg: math.div(28, 22),
+		title-md: math.div(24, 16),
+		title-sm: math.div(20, 14),
+		label-lg: math.div(20, 14),
+		label-md: math.div(16, 12),
+		label-sm: math.div(16, 11),
+		body-lg: math.div(24, 16),
+		body-md: math.div(20, 14),
+		body-sm: math.div(16, 12),
+	),
+	font-weight: (
+		light: 300,
+		regular: 400,
+		medium: 500,
+		bold: 700,
+	),
+	letter-spacing: (
+		display-lg: 0,
+		display-md: 0,
+		display-sm: 0,
+		headline-lg: 0,
+		headline-md: 0,
+		headline-sm: 0,
+		title-lg: 0,
+		title-md: 0.15px,
+		title-sm: 0,
+		label-lg: 0.1px,
+		label-md: 0.5px,
+		label-sm: 0.5px,
+		body-lg: 0.15px,
+		body-md: 0.25px,
+		body-sm: 0.4px,
+	),
+	breakpoints: (
+		xs: 0,
+		sm: 600,
+		md: 900,
+		lg: 1200,
+		xl: 1800,
+	),
+	animation-easing: (
+		default: ease-in-out,
+	),
+	animation-duration: (
+		0: 0ms,
+		2: 200ms,
+		3: 350ms,
+		4: 500ms,
+	),
+);

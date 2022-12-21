@@ -1,0 +1,55 @@
+$theme: null !default;
+
+@use 'sass:map';
+@use './variables.scss';
+@use './../grc-theme/utils';
+
+@use "./../../../node_modules/devextreme/scss/widgets/material/sizes" with ($size: "compact");
+
+@use "./../../../node_modules/devextreme/scss/widgets/material/textEditor/colors" as textEditor-colors with (
+  $texteditor-placeholder-color: utils.get($theme, 'color.foreground.neutral'),
+  $texteditor-bg: utils.get($theme, 'color.background.neutral-lightest'),
+  // $texteditor-border-color: utils.get($theme, 'color.'),
+  // $texteditor-hover-border-color:,
+  // $texteditor-focused-border-color,
+);
+
+@use "./../../../node_modules/devextreme/scss/widgets/material/button/colors" as button-colors with (
+  $button-default-bg: utils.get($theme, 'color.background.primary-rest'),
+  $button-default-hover-bg: utils.get($theme, 'color.background.primary-hover'),
+  $button-default-focused-bg: utils.get($theme, 'color.background.primary-hover'),
+  $button-default-active-bg: utils.get($theme, 'color.background.primary-pressed'),
+  // $button-normal-color: inherit,
+  // $button-normal-icon-color: red,
+);
+
+@use "./../../../node_modules/devextreme/scss/widgets/material/tabs/colors" as tabs-colors;/* with (
+  $tabs-tab-color: utils.get($theme, 'color.foreground.neutral-dark'),
+);*/
+
+@use "./../../../node_modules/devextreme/scss/widgets/material/badge/colors" as badge-colors with (
+  $badge-bg: utils.get($theme, 'color.background.primary-lightest'),
+  $badge-color: utils.get($theme, 'color.foreground.neutral-dark'),
+);
+
+@use "./../../../node_modules/devextreme/scss/widgets/material/toolbar/colors" as toolbar-colors with (
+  $toolbar-bg: transparent,
+  $toolbar-color: inherit,
+);
+
+@use "./../../../node_modules/devextreme/scss/widgets/material/typography";
+@use "./../../../node_modules/devextreme/scss/widgets/material/icons";
+@use "./../../../node_modules/devextreme/scss/widgets/material/widget";
+@use "./../../../node_modules/devextreme/scss/widgets/material/card";
+@use "./../../../node_modules/devextreme/scss/widgets/material/fieldset";
+@use "./../../../node_modules/devextreme/scss/widgets/material/common";
+@use "./../../../node_modules/devextreme/scss/widgets/base/resizable";
+@use "./../../../node_modules/devextreme/scss/widgets/base/draggable";
+@use "./../../../node_modules/devextreme/scss/widgets/base/ui";
+@use "./../../../node_modules/devextreme/scss/widgets/material";
+
+@use "./../../node_modules/devexpress-gantt/dist/dx-gantt.css";
+@use "./dx-styles.scss";
+
+@use "./dx-dashboard.scss";
+@use "./dx-reporting.scss";

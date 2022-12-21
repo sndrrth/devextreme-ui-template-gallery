@@ -1,17 +1,25 @@
 $primary: (
-  0: #15204C 
-  10: #203072 
-  20: #2B4099 
-  30: #4060E5 
-  40: #8095EE 
-  50: #BFCAF6 
-  60: #D9DFFA 
-  70: #ECEFFC 
-  80: #ECEFFC 
-  alpha-40: #15204C
+  0: #15204C,
+  10: #203072, 
+  20: #2B4099, 
+  30: #4060E5, 
+  40: #8095EE, 
+  50: #BFCAF6, 
+  60: #D9DFFA, 
+  70: #ECEFFC, 
+  80: #F0F2FD, 
+  alpha-40: #15204C,
 );
 
 $secondary: (
+  0: #363949,
+  10: #5B607A,
+  20: #6D7392,
+  30: #B5BAD0,
+  40: #E1E3EC,
+);
+
+$neutral: (
   0: #000000,
   10: #272C33,
   20: #393F47,
@@ -22,12 +30,12 @@ $secondary: (
   70: #ACB3BE,
   80: #CDD2DA,
   90: #DFE3EA,
-  95: #E0E0E0,
-  99: #F1F3F5,
-  100: #F8F9FA,
+  95: #F4F5F7,
+  99: #F8F9FA,
+  100: #FFFFFF,
 );
 
-$signal-success: (
+$signal-positive: (
   10: #1A2B22,
   20: #2B4838,
   30: #81D8A8,
@@ -49,4 +57,5 @@ $signal-warning: (
   30: #F59439,
   40: #FFCA99,
   50: #FFF2E7,
+  60: #FDEAD7,
 );

@@ -1,0 +1,5 @@
+@use './../grc-theme/theme';
+
+@use './theme' as devex-theme with (
+  $theme: theme.$grc-light-theme
+);

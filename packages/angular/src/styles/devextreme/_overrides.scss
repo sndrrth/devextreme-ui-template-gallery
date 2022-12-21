@@ -1,0 +1,11 @@
+@mixin dx-texteditor-outlined() {
+  .dx-texteditor.dx-editor-outlined {
+    @content;
+  }
+}
+
+@mixin dx-button-icon() {
+  .dx-button .dx-icon {
+    @content;
+  }
+}

@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "./../theme";
+
+$colors-map: map.get(theme.$grc-light-theme, "color");
+
+@function color($color, $variant: 50) {
+	@if (map.has-key($colors-map, $color) and (map.has-key(map.get($colors-map, $color), $variant))) {
+		@return var(--grc-color-#{$color}-#{$variant});
+	} @else {
+		@error "Unknown color #{$color}.#{$variant}";
+	}
+}
+
+@function on-color($color, $variant: 50) {
+	$color-key: "on-#{$color}";
+
+	@if map.has-key($colors-map, $color-key) {
+		@return var(--grc-color-#{$color-key}-#{$variant});
+	} @else {
+		@error "Unknown on-color #{$color}.#{$variant}";
+	}
+}
+
+@mixin background($variant) {
+	$bg: color("background", $variant);
+	$on: color("foreground", "on-#{$variant}");
+
+	background-color: $bg;
+	color: $on;
+}

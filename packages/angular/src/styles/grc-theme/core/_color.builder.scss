@@ -1,0 +1,9 @@
+@use "sass:map";
+
+@mixin props($theme) {
+	@each $color, $color-map in map.get($theme, "color") {
+		@each $variant, $value in $color-map {
+			--grc-color-#{$color}-#{$variant}: #{$value};
+		}
+	}
+}
