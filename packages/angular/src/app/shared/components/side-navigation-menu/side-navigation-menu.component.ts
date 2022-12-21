@@ -1,9 +1,9 @@
 import {
-  Component, NgModule, Output, Input, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, ViewChildren, QueryList,
+  Component, NgModule, Output, Input, EventEmitter, ViewChildren, QueryList,
 } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { ItemClickEvent } from 'devextreme/ui/tree_view';
-import { DxTreeViewModule, DxTreeViewComponent } from 'devextreme-angular/ui/tree-view';
-import * as events from 'devextreme/events';
+import { DxTreeViewComponent } from 'devextreme-angular/ui/tree-view';
 import { navigation } from '../../../app-navigation';
 import { CommonModule } from '@angular/common';
 import { DxScrollViewModule } from 'devextreme-angular';
@@ -16,7 +16,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './side-navigation-menu.component.html',
   styleUrls: ['./side-navigation-menu.component.scss'],
 })
-export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
+export class SideNavigationMenuComponent {
   @ViewChildren(DxTreeViewComponent)
   menu!: QueryList<DxTreeViewComponent>;
 
@@ -52,29 +52,15 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
     this._compactMode = val;
   }
 
-  constructor(private elementRef: ElementRef, private sanitizer: DomSanitizer) { }
+  constructor(private sanitizer: DomSanitizer) { }
 
   svg(html: string) {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
-
-  onItemClick(event: ItemClickEvent) {
-    this.selectedItemChanged.emit(event);
-  }
-
-  ngAfterViewInit() {
-    events.on(this.elementRef.nativeElement, 'dxclick', (e: Event) => {
-      // this.openMenu.next(e);
-    });
-  }
-
-  ngOnDestroy() {
-    events.off(this.elementRef.nativeElement, 'dxclick');
-  }
 }
 
 @NgModule({
-  imports: [DxTreeViewModule, DxScrollViewModule, CommonModule],
+  imports: [DxScrollViewModule, CommonModule, RouterModule],
   declarations: [SideNavigationMenuComponent],
   exports: [SideNavigationMenuComponent],
 })

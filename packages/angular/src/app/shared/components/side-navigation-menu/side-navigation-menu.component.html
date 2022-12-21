@@ -5,22 +5,19 @@
         <span class="text">{{ group.label }}</span>
         <span class="icon dx-icon dx-icon-more"></span>
       </div>
-      <dx-tree-view
-        [items]="group.items"
-        keyExpr="path"
-        selectionMode="single"
-        [focusStateEnabled]="false"
-        expandEvent="click"
-        (onItemClick)="onItemClick($event)"
-        width="100%"
-      >
-        <ng-container *dxTemplate="let item of 'item'">
-          <i class="dx-icon dx-svg-icon" [innerHTML]="svg(item.icon)"></i>
+      <div *ngFor="let item of group.items">
+        <a *ngIf="item.path" [routerLink]="item.path" routerLinkActive="menu-item--active" class="menu-item">
+          <i class="menu-icon" [innerHTML]="svg(item.icon)"></i>
           <span class="menu-item-text">{{ item.text }}</span>
           <span *ngIf="item.badge" class="menu-item-badge">{{ item.badge }}</span>
-        </ng-container>
-      </dx-tree-view>
+        </a>
+        <a *ngIf="!item.path" class="menu-item">
+          <i class="menu-icon" [innerHTML]="svg(item.icon)"></i>
+          <span class="menu-item-text">{{ item.text }}</span>
+          <span *ngIf="item.badge" class="menu-item-badge">{{ item.badge }}</span>
+        </a>
+      </div>
     </div>
   </div>
 </dx-scroll-view>
-<div class="border" [attr.data-compact]="_compactMode"></div>
+<div class="shadow" [attr.data-compact]="_compactMode"></div>
