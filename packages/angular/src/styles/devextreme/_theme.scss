@@ -6,6 +6,10 @@ $theme: null !default;
 
 @use "./../../../node_modules/devextreme/scss/widgets/material/sizes" with ($size: "compact");
 
+@use "./../../../node_modules/devextreme/scss/widgets/material/scrollable/colors" as scrollable-colors with (
+  $scrollable-scroll-bg: utils.get($theme, 'color.background.neutral-rest'),
+);
+
 @use "./../../../node_modules/devextreme/scss/widgets/material/textEditor/colors" as textEditor-colors with (
   $texteditor-placeholder-color: utils.get($theme, 'color.foreground.neutral'),
   $texteditor-bg: utils.get($theme, 'color.background.neutral-lightest'),
