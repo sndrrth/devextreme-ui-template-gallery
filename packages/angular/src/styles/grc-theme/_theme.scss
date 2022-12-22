@@ -97,7 +97,8 @@ $grc-light-theme: (
 
 			secondary-light: map.get(palettes.$secondary, 40),
 
-			neutral-light: map.get(palettes.$neutral, 95), /* TODO: Fix */
+			neutral-dark: map.get(palettes.$neutral, 70),
+			neutral-light: map.get(palettes.$neutral, 95),
 		),
 		outline: (
 			primary-focused: map.get(palettes.$primary, 'alpha-40'),

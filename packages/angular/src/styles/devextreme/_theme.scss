@@ -10,6 +10,15 @@ $theme: null !default;
   $scrollable-scroll-bg: utils.get($theme, 'color.background.neutral-rest'),
 );
 
+@use "./../../../node_modules/devextreme/scss/widgets/material/checkBox/colors" as checkBox-colors with (
+  $checkbox-icon-border-radius: 4px,
+  $checkbox-border-color: utils.get($theme, 'color.border.neutral-dark'),
+);
+
+@use "./../../../node_modules/devextreme/scss/widgets/material/checkBox/sizes" as checkBox-sizes with (
+  $material-checkbox-border-radius: 4px,
+);
+
 @use "./../../../node_modules/devextreme/scss/widgets/material/textEditor/colors" as textEditor-colors with (
   $texteditor-placeholder-color: utils.get($theme, 'color.foreground.neutral'),
   $texteditor-bg: utils.get($theme, 'color.background.neutral-lightest'),
@@ -25,6 +34,10 @@ $theme: null !default;
   $button-default-active-bg: utils.get($theme, 'color.background.primary-pressed'),
   // $button-normal-color: inherit,
   // $button-normal-icon-color: red,
+);
+
+@use "./../../../node_modules/devextreme/scss/widgets/material/gridBase/colors" as gridBase-colors with (
+  $datagrid-selection-bg: utils.get($theme, 'color.background.primary-active'),
 );
 
 @use "./../../../node_modules/devextreme/scss/widgets/material/tabs/colors" as tabs-colors;/* with (
