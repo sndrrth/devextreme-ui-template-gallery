@@ -13,6 +13,7 @@ $theme: theme.$grc-light-theme;
   $base-accent: utils.get($theme, 'color.background.primary'),
   $base-text-color: utils.get($theme, 'color.foreground.neutral-dark'),
   $base-border-color: utils.get($theme, 'color.border.neutral-light'),
+  $base-hover-bg: utils.get($theme, 'color.background.neutral-hover'),
 );
 
 @forward "../../../node_modules/devextreme/scss/widgets/material/colors";

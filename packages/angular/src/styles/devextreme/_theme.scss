@@ -22,6 +22,7 @@ $theme: null !default;
 @use "./../../../node_modules/devextreme/scss/widgets/material/textEditor/colors" as textEditor-colors with (
   $texteditor-placeholder-color: utils.get($theme, 'color.foreground.neutral'),
   $texteditor-bg: utils.get($theme, 'color.background.neutral-lightest'),
+  $texteditor-hover-bg: utils.get($theme, 'color.background.neutral-hover'),
   // $texteditor-border-color: utils.get($theme, 'color.'),
   // $texteditor-hover-border-color:,
   // $texteditor-focused-border-color,
