@@ -7,7 +7,8 @@
       cssClass="menu-button toolbar-btn"
       [options]="{
         icon: barIcon,
-        stylingMode: 'text',
+        stylingMode: 'contained',
+        type: 'default',
         onClick: toggleMenu
       }"
     >
@@ -28,29 +29,10 @@
         stylingMode: 'outlined',
         mode: 'search',
         placeholder: 'Search',
-        width: 420
+        width: 480
       }"
     >
     </dxi-item>
-   
-    <dxi-item location="after">
-      <div *dxTemplate>
-        <div class="btn-with-badge toolbar-btn">
-          <dx-button [icon]="bellIcon" stylingMode="text"></dx-button>
-          <div class="badge">2</div>
-        </div>
-      </div>
-    </dxi-item>
-
-    <dxi-item
-      location="after"
-      widget="dxButton"
-      cssClass="header-icon-btn toolbar-btn"
-      [options]="{
-        icon: userGearIcon,
-        stylingMode: 'text'
-      }"
-    ></dxi-item>
 
     <dxi-item
       location="after"
@@ -58,9 +40,31 @@
       cssClass="header-icon-btn toolbar-btn"
       [options]="{
         icon: circleQuestionIcon,
-        stylingMode: 'text'
+        stylingMode: 'contained',
+        type: 'default'
       }"
     ></dxi-item>
+    
+    <dxi-item
+      location="after"
+      widget="dxButton"
+      cssClass="header-icon-btn toolbar-btn"
+      [options]="{
+        icon: listIcon,
+        stylingMode: 'contained',
+        type: 'default'
+      }"
+    ></dxi-item>
+
+       
+    <dxi-item location="after">
+      <div *dxTemplate>
+        <div class="btn-with-badge toolbar-btn header-icon-btn">
+          <dx-button [icon]="bellIcon" stylingMode="contained" type="default"></dx-button>
+          <div class="badge">2</div>
+        </div>
+      </div>
+    </dxi-item>
 
     <dxi-item
       location="after"
@@ -72,7 +76,9 @@
         <dx-button
           class="user-button authorization toolbar-btn"
           height="100%"
-          stylingMode="text"
+          stylingMode="contained"
+          type="default"
+          [icon]="listIcon"
         >
           <div *dxTemplate="let data of 'content'">
             <app-user-panel

@@ -5,18 +5,8 @@
 :host {
   flex: 0 0 auto;
   z-index: 1;
-  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05), 0 0 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 24px 4px rgba(0, 0, 0, 0.08);
   position: relative;
-
-  &::after {
-    height: 4px;
-    position: absolute;
-    top: 100%;
-    right: 0px;
-    left: 0px;
-    background: linear-gradient(rgba(9, 30, 66, 0.13) 0px, rgba(9, 30, 66, 0.13) 1px, rgba(9, 30, 66, 0.08) 1px, rgba(9, 30, 66, 0) 4px);
-    content: "";
-  }
 }
 
 ::ng-deep .dx-toolbar.header-toolbar .dx-toolbar-items-container .dx-toolbar-after {
@@ -29,7 +19,7 @@
 
 ::ng-deep .dx-toolbar .dx-toolbar-item.menu-button {
   text-align: center;
-  padding: 0 11px 0 18px;
+  padding: 0 11px 0 0;
 }
 
 ::ng-deep .header-title .dx-item-content {
@@ -56,7 +46,7 @@
 }
 
 header {
-  padding: 5px 0;
+  padding: 12px 18px;
   background-color: utils.color('background', 'primary');
   color: utils.color('foreground', 'neutral-lightest');
 
@@ -75,7 +65,7 @@ header {
 
 :host ::ng-deep .toolbar-btn {
   @include overrides.dx-button-icon() {
-    color: utils.color('foreground', 'neutral-lightest');
+    // color: utils.color('foreground', 'neutral-lightest');
   }
 }
 
@@ -90,8 +80,8 @@ header {
   margin: 0;
   padding: 0;
   border-radius: 99999px;
-  background-color: #fff;
-  color: #008299;
+  background-color: utils.color('background', 'signal-danger');
+  color: utils.color('foreground', 'neutral-lightest');
   right: 0;
   top: -3px;
   font-size: 10px;

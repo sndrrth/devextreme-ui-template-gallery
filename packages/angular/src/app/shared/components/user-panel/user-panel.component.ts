@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { DxListModule } from 'devextreme-angular/ui/list';
 import { DxContextMenuModule } from 'devextreme-angular/ui/context-menu';
 import { IUser } from '../../services/auth.service';
+import { icon } from '@fortawesome/fontawesome-svg-core';
+import { faCircleUser } from '@fortawesome/pro-regular-svg-icons';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-user-panel',
@@ -21,7 +24,9 @@ export class UserPanelComponent {
   @Input()
   user!: IUser | null;
 
-  constructor() {}
+  userIcon = this.sanitizer.bypassSecurityTrustHtml(icon(faCircleUser).html[0]);
+
+  constructor(private sanitizer: DomSanitizer) {}
 }
 
 @NgModule({

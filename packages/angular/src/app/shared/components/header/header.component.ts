@@ -9,8 +9,9 @@ import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { Router } from '@angular/router';
 import { UserPanelModule } from '../user-panel/user-panel.component';
 import { AuthService, IUser } from '../../services';
-import { faBars, faBell, faUserGear, faCircleQuestion } from '@fortawesome/pro-regular-svg-icons';
+import { faBars, faBell, faUserGear, faCircleQuestion, faCircleUser, faListUl } from '@fortawesome/pro-regular-svg-icons';
 import { icon } from '@fortawesome/fontawesome-svg-core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-header',
@@ -31,9 +32,9 @@ export class HeaderComponent implements OnInit {
   user: IUser | null = { email: '' };
 
   barIcon = icon(faBars).html[0]
+  circleQuestionIcon = icon(faCircleQuestion).html[0];
+  listIcon = icon(faListUl).html[0];
   bellIcon = icon(faBell).html[0]
-  userGearIcon = icon(faUserGear).html[0]
-  circleQuestionIcon = icon(faCircleQuestion).html[0]
 
   userMenuItems = [{
     text: 'Profile',

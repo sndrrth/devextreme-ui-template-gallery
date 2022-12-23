@@ -1,19 +1,6 @@
 <div class="user-panel">
-  <div class="user-info">
-    
-    <div class="user-details">
-      <div class="user-name">
-        {{ user?.name }}
-      </div>
-      <div class="user-title">
-        {{ user?.title }}
-      </div>
-    </div>
+  <i class="dx-icon" [innerHTML]="userIcon"></i>
 
-    <div class="image-container">
-      <div class="user-image"></div>
-    </div>
-  </div>
   <dx-context-menu
     *ngIf="menuMode === 'context'"
     [items]="menuItems"
