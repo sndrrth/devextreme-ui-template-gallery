@@ -23,10 +23,18 @@ $theme: null !default;
   $texteditor-placeholder-color: utils.get($theme, 'color.foreground.neutral'),
   $texteditor-bg: utils.get($theme, 'color.background.neutral-lightest'),
   $texteditor-hover-bg: utils.get($theme, 'color.background.neutral-hover'),
+  $texteditor-button-clear-icon-color-bg: utils.get($theme, 'color.background.secondary-rest'),
+  $texteditor-button-clear-icon-color: utils.get($theme, 'color.foreground.secondary-rest'),
+  // $texteditor-input-border-radius: 99999px,
   // $texteditor-border-color: utils.get($theme, 'color.'),
   // $texteditor-hover-border-color:,
   // $texteditor-focused-border-color,
 );
+
+@use "./../../../node_modules/devextreme/scss/widgets/material/textBox/colors" as textBox-colors with (
+  $textbox-search-icon-color: utils.get($theme, 'color.foreground.neutral'),
+);
+
 
 @use "./../../../node_modules/devextreme/scss/widgets/material/button/colors" as button-colors with (
   $button-default-bg: utils.get($theme, 'color.background.primary-rest'),
@@ -69,5 +77,5 @@ $theme: null !default;
 @use "./../../node_modules/devexpress-gantt/dist/dx-gantt.css";
 @use "./dx-styles.scss";
 
-@use "./dx-dashboard.scss";
-@use "./dx-reporting.scss";
+// @use "./dx-dashboard.scss";
+// @use "./dx-reporting.scss";

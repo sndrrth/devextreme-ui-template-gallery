@@ -43,7 +43,6 @@ $grc-light-theme: (
     signal-warning: palettes.$signal-warning,
 
 		background: (
-			
 			neutral-rest: map.get(palettes.$neutral, 50), /* Not defined in design system */
 			neutral-active: map.get(palettes.$neutral, 90), /* Not defined in design system */
 			neutral-hover: map.get(palettes.$neutral, 95), /* Not defined in design system */
@@ -62,6 +61,8 @@ $grc-light-theme: (
 
 			primary: map.get(palettes.$primary, 30),
 			primary-lightest: map.get(palettes.$primary, 60), /* Not defined in design system */
+
+			secondary-rest: map.get(palettes.$secondary, 60),
 
 			signal-positive: map.get(palettes.$signal-positive, 30),
 			signal-positive-lighter: map.get(palettes.$signal-positive, 50),
@@ -83,9 +84,13 @@ $grc-light-theme: (
       primary-rest: map.get(palettes.$primary, 30),
       disabled: map.get(palettes.$neutral, 60),  
 
-      secondary-darker: map.get(palettes.$secondary, 0),
-      secondary-dark: map.get(palettes.$secondary, 20),
-      secondary: map.get(palettes.$secondary, 30),
+      secondary-darker: map.get(palettes.$secondary, 10),
+      secondary-dark: map.get(palettes.$secondary, 30),
+      secondary: map.get(palettes.$secondary, 40),
+
+			secondary-pressed: map.get(palettes.$secondary, 10),
+			secondary-hover: map.get(palettes.$secondary, 20),
+			secondary-rest: map.get(palettes.$secondary, 30),
 
       signal-positive: map.get(palettes.$signal-positive, 10),
       signal-warning: map.get(palettes.$signal-warning, 10),

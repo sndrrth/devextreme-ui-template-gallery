@@ -50,6 +50,7 @@
 :host ::ng-deep .search-input {
   @include overrides.dx-texteditor-outlined() {
     box-shadow: none;
+    border-radius: 99999px;
     background-color: utils.color('background', 'neutral-lightest');
   }
 }
