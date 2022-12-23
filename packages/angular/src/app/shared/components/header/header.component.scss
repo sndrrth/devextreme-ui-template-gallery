@@ -17,6 +17,13 @@
   }
 }
 
+:host ::ng-deep .header-title {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
 ::ng-deep .dx-toolbar .dx-toolbar-item.menu-button {
   text-align: center;
   padding: 0 11px 0 0;

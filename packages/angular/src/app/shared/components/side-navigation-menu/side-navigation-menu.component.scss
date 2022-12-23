@@ -1,5 +1,6 @@
 @use "vars" as *;
 @use "utils";
+@use 'sass:math';
 
 :host {
   width: 250px !important;
@@ -48,7 +49,9 @@
   padding-left: 10px;
   color: utils.color("foreground", "secondary-dark");
   font-size: 12px;
-  font-weight: bold;
+  line-height: math.div(14, 12); 
+  letter-spacing: 0.06em;
+  font-weight: 700;
   text-transform: uppercase;
   position: relative;
 
@@ -157,6 +160,8 @@
   text-overflow: ellipsis;
   transition: all 200ms ease;
   font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
 
   .menu-container[data-compact="true"] & {
     opacity: 0;

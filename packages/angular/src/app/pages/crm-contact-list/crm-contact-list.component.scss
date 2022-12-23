@@ -1,3 +1,4 @@
+@use 'utils';
 @use "vars" as *;
 @use "sass:math";
 
@@ -13,13 +14,16 @@ $side-panel-toolbar-height: 76px;
 
 .view-wrapper {
   position: absolute;
-  top: 0;
+  top: 20px;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 20px;
+  right: 20px;
   display: grid;
   grid-template-areas: "main panel" "main panel" "main panel";
   grid-template-rows: auto minmax(0, 1fr);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: utils.color('background', 'neutral-lightest');
 
   .data-grid {
     height: 100%;
