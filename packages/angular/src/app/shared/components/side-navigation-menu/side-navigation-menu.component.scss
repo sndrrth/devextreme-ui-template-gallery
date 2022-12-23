@@ -73,7 +73,7 @@
   inline-size: 100%;
   display: flex;
   align-items: center;
-  padding: 8px 12px 8px;
+  padding: 8px 12px 8px 0;
   border-radius: 8px;
   color: utils.color("foreground", "secondary-rest");
   text-decoration: none;
@@ -121,6 +121,7 @@
   display: inline-block;
   margin-block: -8px;
   padding-block: 8px;
+  padding-inline: 8px;
   font-size: 16px;
   text-align: center;
   line-height: 1;
@@ -128,7 +129,6 @@
 
   .menu-container[data-compact="true"] & {
     border-radius: 12px;
-    padding-inline: 8px;
   }
 
   .menu-container[data-compact="true"] .menu-item:not(.menu-item--active) & {
@@ -151,7 +151,6 @@
 }
 
 .menu-item-text {
-  margin-inline-start: 8px;
   flex-grow: 1;
   overflow: hidden;
   white-space: nowrap;
