@@ -43,7 +43,7 @@ $grc-light-theme: (
     signal-warning: palettes.$signal-warning,
 
 		background: (
-			neutral-rest: map.get(palettes.$neutral, 50), /* Not defined in design system */
+			// neutral-rest: map.get(palettes.$neutral, 50), /* Not defined in design system */
 			neutral-active: map.get(palettes.$neutral, 90), /* Not defined in design system */
 			neutral-hover: map.get(palettes.$neutral, 95), /* Not defined in design system */
 

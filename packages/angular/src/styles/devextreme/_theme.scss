@@ -7,7 +7,7 @@ $theme: null !default;
 @use "./../../../node_modules/devextreme/scss/widgets/material/sizes" with ($size: "compact");
 
 @use "./../../../node_modules/devextreme/scss/widgets/material/scrollable/colors" as scrollable-colors with (
-  $scrollable-scroll-bg: utils.get($theme, 'color.background.neutral-rest'),
+  $scrollable-scroll-bg: utils.get($theme, 'color.background.secondary-rest'),
 );
 
 @use "./../../../node_modules/devextreme/scss/widgets/material/checkBox/colors" as checkBox-colors with (
