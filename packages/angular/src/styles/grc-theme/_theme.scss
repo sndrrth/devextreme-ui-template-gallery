@@ -63,6 +63,8 @@ $grc-light-theme: (
 			primary-lightest: map.get(palettes.$primary, 60), /* Not defined in design system */
 
 			secondary-rest: map.get(palettes.$secondary, 60),
+			secondary-inactive-hover: map.get(palettes.$secondary, 80),
+			secondary-inactive-pressed: map.get(palettes.$secondary, 80),
 
 			signal-positive: map.get(palettes.$signal-positive, 30),
 			signal-positive-lighter: map.get(palettes.$signal-positive, 50),
@@ -108,7 +110,7 @@ $grc-light-theme: (
 			neutral-light: map.get(palettes.$neutral, 95),
 		),
 		outline: (
-			primary-focused: map.get(palettes.$primary, 'alpha-40'),
+			primary: map.get(palettes.$primary, 'alpha-80'),
 		),
 	),
 	font-family: (

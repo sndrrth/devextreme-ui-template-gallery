@@ -5,9 +5,9 @@
         <span class="text">{{ group.label }}</span>
         <span class="icon dx-icon dx-icon-more"></span>
       </div>
-      <div *ngFor="let item of group.items">
+      <ng-container *ngFor="let item of group.items">
         <a *ngIf="item.path" [routerLink]="item.path" routerLinkActive="menu-item--active" class="menu-item">
-          <i class="menu-icon" [innerHTML]="svg(item.icon)"></i>
+          <i class="menu-icon fa-sm" [innerHTML]="svg(item.icon)"></i>
           <span class="menu-item-text">{{ item.text }}</span>
           <span *ngIf="item.badge" class="menu-item-badge">{{ item.badge }}</span>
         </a>
@@ -16,8 +16,9 @@
           <span class="menu-item-text">{{ item.text }}</span>
           <span *ngIf="item.badge" class="menu-item-badge">{{ item.badge }}</span>
         </a>
-      </div>
+      </ng-container>
     </div>
   </div>
 </dx-scroll-view>
-<div class="shadow" [attr.data-compact]="_compactMode"></div>
+<!--<div class="shadow" [attr.data-compact]="_compactMode"></div>-->
+

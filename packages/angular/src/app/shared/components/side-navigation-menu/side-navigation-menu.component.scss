@@ -1,5 +1,5 @@
 @use "vars" as *;
-@use 'utils';
+@use "utils";
 
 :host {
   width: 250px !important;
@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: utils.color('background', 'neutral-light');
+  background-color: utils.color("background", "neutral-lightest");
 }
 
 .shadow {
@@ -18,7 +18,7 @@
   bottom: 0;
   width: 3px;
   opacity: 0.5;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0.1) 1px, rgba(0, 0, 0, 0) 100% );
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0.1) 1px, rgba(0, 0, 0, 0) 100%);
   transition: all 400ms ease;
 
   &[data-compact="true"] {
@@ -46,7 +46,7 @@
 .menu-group-label {
   margin-block-end: 8px;
   padding-left: 10px;
-  color: utils.color('foreground', 'secondary-dark');
+  color: utils.color("foreground", "secondary-dark");
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
@@ -60,8 +60,12 @@
   }
 
   .menu-container[data-compact="true"] & {
-    .text { visibility: hidden; }
-    .icon { display: block; }
+    .text {
+      visibility: hidden;
+    }
+    .icon {
+      display: block;
+    }
   }
 }
 
@@ -69,9 +73,9 @@
   inline-size: 100%;
   display: flex;
   align-items: center;
-  padding: 8px 0;
-  border-radius: 4px;
-  color: utils.color('foreground', 'secondary-dark');
+  padding: 8px 12px 8px;
+  border-radius: 8px;
+  color: utils.color("foreground", "secondary-rest");
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
@@ -79,46 +83,81 @@
   text-overflow: ellipsis;
   transition: all 200ms ease;
 
-  .menu-container[data-compact="false"] &:hover {
-    background-color: utils.color('background', 'neutral-active');
+  & + & {
+    margin-block-start: 8px;
+  }
+
+  .menu-container[data-compact="false"] &:not(.menu-item--active) {
+    &:hover,
+    &:focus {
+      background-color: utils.color("background", "secondary-inactive-hover");
+      color: utils.color("foreground", "secondary-hover");
+    }
+
+    &:active {
+      background-color: utils.color("background", "secondary-inactive-pressed");
+      color: utils.color("foreground", "secondary-pressed");
+    }
+  }
+
+  .menu-container[data-compact="false"] &  {
+    &:focus-visible {
+      outline-color: utils.color('outline', 'primary');	
+    }
   }
 }
 
 .menu-item--active {
   .menu-container[data-compact="false"] & {
-    background-color: utils.color('background', 'neutral-active');
+    background-color: utils.color("background", "primary-active");
+    color: utils.color("foreground", "primary-rest");
   }
 }
 
 .menu-icon {
-  inline-size: 40px;
+  inline-size: 20px;
   block-size: 20px;
   box-sizing: content-box;
   display: inline-block;
   margin-block: -8px;
-  margin-inline-end: 5px;
   padding-block: 8px;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   line-height: 1;
   transition: all 200ms ease;
-  
+
   .menu-container[data-compact="true"] & {
     border-radius: 12px;
+    padding-inline: 8px;
+  }
+
+  .menu-container[data-compact="true"] .menu-item:not(.menu-item--active) & {
+    &:hover,
+    &:focus {
+      background-color: utils.color("background", "secondary-inactive-hover");
+      color: utils.color("foreground", "secondary-hover");
+    }
+
+    &:active {
+      background-color: utils.color("background", "secondary-inactive-pressed");
+      color: utils.color("foreground", "secondary-pressed");
+    }
   }
 
   .menu-container[data-compact="true"] .menu-item--active & {
-    background-color: utils.color('background', 'neutral-active');
-  }
-
-  .menu-container[data-compact="true"] .menu-item:hover & {
-    background-color: utils.color('background', 'neutral-active');
+      background-color: utils.color("background", "primary-active");
+      color: utils.color("foreground", "primary-rest");
   }
 }
 
 .menu-item-text {
+  margin-inline-start: 8px;
   flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   transition: all 200ms ease;
+  font-size: 16px;
 
   .menu-container[data-compact="true"] & {
     opacity: 0;
@@ -127,10 +166,9 @@
 }
 
 .menu-item-badge {
-  background-color: utils.color('background', 'neutral-dark');
-  color: utils.color('foreground', 'secondary-dark');
+  background-color: utils.color("background", "neutral-dark");
+  color: utils.color("foreground", "secondary-dark");
   display: inline-flex;
-  margin-inline-end: 10px;
   padding-block: 2px;
   padding-inline: 6px;
   border-radius: 8px;

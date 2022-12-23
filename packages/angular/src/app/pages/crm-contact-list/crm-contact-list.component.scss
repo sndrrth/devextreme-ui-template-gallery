@@ -25,7 +25,7 @@ $side-panel-toolbar-height: 76px;
     height: 100%;
     display: flex;
     overflow: hidden;
-    margin-inline: 16px;
+    margin-inline: 20px;
   }
 
   ::ng-deep .clickable-row {
@@ -50,7 +50,7 @@ $side-panel-toolbar-height: 76px;
       width: auto;
       margin-inline: 16px;
       margin-block-end: 30px;
-      padding: 20px 0 11px;
+      padding: 20px 0 20px;
     }
   }
 
