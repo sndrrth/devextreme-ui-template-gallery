@@ -3,7 +3,7 @@
 @use 'sass:math';
 
 :host {
-  width: 250px !important;
+  width: 260px !important;
   height: 100%;
   min-height: 100%;
   display: flex;
@@ -159,7 +159,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   transition: all 200ms ease;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.25;
   letter-spacing: 0.02em;
 
