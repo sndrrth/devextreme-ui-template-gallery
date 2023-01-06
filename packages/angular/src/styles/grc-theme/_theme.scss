@@ -84,7 +84,7 @@ $grc-light-theme: (
       primary-pressed: map.get(palettes.$primary, 10),
       primary-hover: map.get(palettes.$primary, 20),
       primary-rest: map.get(palettes.$primary, 30),
-      disabled: map.get(palettes.$neutral, 60),  
+      disabled: map.get(palettes.$neutral, 80),
 
       secondary-darker: map.get(palettes.$secondary, 10),
       secondary-dark: map.get(palettes.$secondary, 30),
@@ -102,9 +102,12 @@ $grc-light-theme: (
 			primary-pressed: map.get(palettes.$primary, 10),
 			primary-hover: map.get(palettes.$primary, 20),
 			primary-rest: map.get(palettes.$primary, 30),
-			disabled: map.get(palettes.$neutral, 99),
+			disabled: map.get(palettes.$neutral, 95),
 
-			secondary-light: map.get(palettes.$secondary, 40),
+			secondary-light: map.get(palettes.$secondary, 60),
+
+			secondary-rest: map.get(palettes.$secondary, 40),
+			secondary-hover: map.get(palettes.$secondary, 60),
 
 			neutral-dark: map.get(palettes.$neutral, 70),
 			neutral-light: map.get(palettes.$neutral, 95),

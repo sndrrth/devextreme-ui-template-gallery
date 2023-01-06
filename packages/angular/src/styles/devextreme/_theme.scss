@@ -12,7 +12,8 @@ $theme: null !default;
 
 @use "./../../../node_modules/devextreme/scss/widgets/material/checkBox/colors" as checkBox-colors with (
   $checkbox-icon-border-radius: 4px,
-  $checkbox-border-color: utils.get($theme, 'color.border.neutral-dark'),
+  $checkbox-border-color: utils.get($theme, 'color.border.secondary-rest'),
+  $checkbox-hover-border-color: utils.get($theme, 'color.border.secondary-hover'),
 );
 
 @use "./../../../node_modules/devextreme/scss/widgets/material/checkBox/sizes" as checkBox-sizes with (
@@ -45,8 +46,21 @@ $theme: null !default;
   // $button-normal-icon-color: red,
 );
 
+@use "./../../../node_modules/devextreme/scss/widgets/material/gridBase/sizes" as gridBase-sizes with (
+  $material-grid-base-cell-font-size: 14px,
+  $material-grid-base-cell-line-height: 17.5px,
+  $material-grid-base-cell-height: 44px,
+  $material-grid-base-header-height: 44px,
+
+  $material-grid-base-header-line-height: 17.5px,
+);
+
 @use "./../../../node_modules/devextreme/scss/widgets/material/gridBase/colors" as gridBase-colors with (
+  $datagrid-columnchooser-item-color: utils.get($theme, 'color.foreground.secondary-rest'),
+  $header-filter-color-empty: utils.get($theme, 'color.foreground.secondary-rest'),
+  
   $datagrid-selection-bg: utils.get($theme, 'color.background.primary-active'),
+  $datagrid-hover-bg: utils.get($theme, "color.background.secondary-inactive-hover"),
 );
 
 @use "./../../../node_modules/devextreme/scss/widgets/material/tabs/colors" as tabs-colors;/* with (
