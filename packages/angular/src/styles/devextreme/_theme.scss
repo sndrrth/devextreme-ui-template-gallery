@@ -42,8 +42,16 @@ $theme: null !default;
   $button-default-hover-bg: utils.get($theme, 'color.background.primary-hover'),
   $button-default-focused-bg: utils.get($theme, 'color.background.primary-hover'),
   $button-default-active-bg: utils.get($theme, 'color.background.primary-pressed'),
+  $button-border-radius: 99999px,
   // $button-normal-color: inherit,
   // $button-normal-icon-color: red,
+);
+
+@use "./../../../node_modules/devextreme/scss/widgets/material/button/sizes" as button-sizes with (
+  $material-button-horizontal-padding: 24px,
+  $material-button-vertical-padding: 8px,
+  $material-button-height: 38px,
+  // $material-text-button-horizontal-padding: 8px;
 );
 
 @use "./../../../node_modules/devextreme/scss/widgets/material/gridBase/sizes" as gridBase-sizes with (

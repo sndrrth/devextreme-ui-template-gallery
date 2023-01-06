@@ -10,6 +10,7 @@ import {
   DxTextBoxModule,
   DxTabsModule,
   DxToolbarModule,
+  DxSpeedDialActionModule,
 } from 'devextreme-angular';
 import { RowClickEvent, RowPreparedEvent, ColumnCustomizeTextArg } from 'devextreme/ui/data_grid';
 import { exportDataGrid as exportDataGridToPdf } from 'devextreme/pdf_exporter';
@@ -32,6 +33,8 @@ import { KpiCardModule } from 'src/app/shared/components/kpi-card/kpi-card.compo
 import { KpiCardListModule } from 'src/app/shared/components/kpi-card-list/kpi-card-list.component';
 import { Contract, contractStatusList } from 'src/app/shared/types/contract';
 import { ContractStatusModule } from 'src/app/shared/components/contract-status/contract-status.component';
+import { faPlus, } from '@fortawesome/pro-regular-svg-icons';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 type FilterContactStatus = ContactStatus | 'All';
 
@@ -57,6 +60,8 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
   dataSource: Contract[];
 
   dataSubscription: Subscription = new Subscription();
+
+  plusIcon = icon(faPlus).html[0];
 
   constructor(private service: RwaService) {
   }
@@ -158,6 +163,7 @@ export class CrmContactListComponent implements OnInit, OnDestroy {
     DxTextBoxModule,
     DxTabsModule,
     DxToolbarModule,
+    DxSpeedDialActionModule,
     
     UserPanelModule,
 
