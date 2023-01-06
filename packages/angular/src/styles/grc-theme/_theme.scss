@@ -49,7 +49,7 @@ $grc-light-theme: (
 
 			neutral-lightest: map.get(palettes.$neutral, 100), 
 			neutral-light: map.get(palettes.$neutral, 95),
-			neutral-dark: map.get(palettes.$neutral, 80), /* Not defined in design system */
+			neutral: map.get(palettes.$neutral, 80),
 
 			primary-pressed: map.get(palettes.$primary, 10),
 			primary-hover: map.get(palettes.$primary, 20),
