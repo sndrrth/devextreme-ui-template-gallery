@@ -1,3 +1,5 @@
+@use './overrides';
+
 html,
 body {
   margin: 0;
@@ -72,4 +74,11 @@ body {
   .dx-drawer-panel-content .dx-overlay-content {
     width: initial !important;
   }
+}
+
+
+@include overrides.dx-button-icon-only-icon() {
+  // The icon is not vertical centered because
+  // we make all buttons larger.
+  margin-block-start: 2px;
 }

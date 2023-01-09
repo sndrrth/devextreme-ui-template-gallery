@@ -15,3 +15,17 @@
     @content;
   }
 }
+
+@mixin dx-button-icon-only() {
+  .dx-button.dx-button-has-icon:not(.dx-button-has-text):not(.dx-shape-standard) {
+    @content;
+  }
+}
+
+@mixin dx-button-icon-only-icon() {
+  @include dx-button-icon-only() {
+    .dx-icon {
+      @content;
+    }
+  }
+}
